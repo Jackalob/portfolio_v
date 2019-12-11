@@ -1,10 +1,8 @@
 <template>
   <div class="home">
-    <div class="home-wrap">
-      <p class="name">Jake Tsao</p>
-      <p class="class">Front-End Engineer</p>
-      <p class="motto">Stay Hungry, Stay Foolish.</p>
-    </div>
+    <p class="home-name">Jake Tsao</p>
+    <p class="home-class">Front-End Engineer</p>
+    <p class="home-motto">Stay Hungry, Stay Foolish.</p>
   </div>
 </template>
 
@@ -13,20 +11,37 @@
   width: 100%;
   height: 100%;
   position: relative;
-  &-wrap{
+  &-name {
     position: absolute;
-    left: 0;
+    bottom: 140px;
+    font-size: 24px;
+    opacity: 0;
+    animation: enter 1s both;
+  }
+  &-class {
+    position: absolute;
     bottom: 100px;
+    font-size: 24px;
+    animation: enter .8s 1s both;
+    opacity: 0;
+  }
+  &-motto {
+    position: absolute;
+    bottom: 60px;
+    font-size: 24px;
+    animation: enter .8s 1.8s both;
+    opacity: 0;
   }
 }
-.name {
-  font-size: 24px;
-}
-.class {
-  font-size: 24px;
-}
-.motto {
-  font-size: 24px;
+
+@keyframes enter {
+  0% {
+    left: 500px;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
 }
 </style>
 
