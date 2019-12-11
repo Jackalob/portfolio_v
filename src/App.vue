@@ -11,12 +11,12 @@
           </div>
         </a>
         <div class="flex-space"></div>
-        <div class="link">
-          <router-link to="/">Home</router-link>
-          <router-link to="/about">About</router-link>
-          <router-link :to="{ name: 'work' }">Work</router-link>
-          <router-link :to="{ name: 'exp' }">Experience</router-link>
-          <router-link :to="{ name: 'contact' }">Contact</router-link>
+        <div class="link">     
+          <router-link to="/"><div @mouseover="navText.home='回到首頁'" @mouseleave="navText.home='Home'">{{navText.home}}</div></router-link>
+          <router-link to="/about"><div @mouseover="navText.about='關於我'" @mouseleave="navText.about='About'">{{navText.about}}</div></router-link>
+          <router-link :to="{ name: 'work' }"><div @mouseover="navText.work='作品集'" @mouseleave="navText.work='Work'">{{navText.work}}</div></router-link>
+          <router-link :to="{ name: 'exp' }"><div @mouseover="navText.exp='工作經歷'" @mouseleave="navText.exp='Experience'">{{navText.exp}}</div></router-link>
+          <router-link :to="{ name: 'contact' }"><div @mouseover="navText.contact='聯絡資訊'" @mouseleave="navText.contact='Contact'">{{navText.contact}}</div></router-link>
         </div>
       </div>
     </header>
@@ -64,8 +64,6 @@ header {
     height: 100%;
     > a {
       display: inline-block;
-      line-height: 80px;
-      padding: 0px 20px;
       position: relative;
       color: map-get($map: $color, $key: primary);
       z-index: 0;
@@ -83,6 +81,11 @@ header {
         &::before {
           background-color: map-get($color, hover);
         }
+      }
+      >div{
+        width: 100px;
+        line-height: 80px;
+        text-align: center;
       }
     }
   }
@@ -122,4 +125,21 @@ header {
     padding: 0 10px 40px 10px;
   }
 }
+
 </style>
+
+<script>
+export default {
+  data(){
+    return {
+      navText:{
+        home: 'Home',
+        about: 'About',
+        work: 'Work',
+        exp: 'Experience',
+        contact: 'Contact'
+      }
+    }
+  }
+}
+</script>

@@ -1,12 +1,33 @@
 <template>
   <div class="work">
-    <h1>saa</h1>
-    <h2>sad</h2>
-    <h3>sae</h3>
+    <div class="work-btns">
+      <button @click="changeComp('WorkBook')">書本</button>
+      <button @click="changeComp('WorkList')">圖列</button>
+    </div>
+    <component :is='nowComponent'></component>
   </div>
 </template>
 
+<style lang="scss"></style>
 
-<style lang='scss'>
+<script>
+import WorkBook from "@/components/WorkBook.vue";
+import WorkList from "@/components/WorkList.vue";
 
-</style>
+export default {
+  data() {
+    return {
+      nowComponent: "WorkBook"
+    };
+  },
+  methods: {
+    changeComp(name){
+      this.nowComponent = name
+    }
+  },
+  components: {
+    WorkBook,
+    WorkList
+  }
+};
+</script>

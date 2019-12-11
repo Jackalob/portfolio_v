@@ -39,10 +39,10 @@
     left: 500px;
   }
   70%{
-    left: -50px;
+    left: 0px;
   }
   100% {
-    left: 0;
+    left: 50px;
     opacity: 1;
   }
 }
