@@ -1,3 +1,13 @@
 <template>
-  <h1>我是wB</h1>
+  <div class="work-book"></div>
 </template>
+
+<script>
+export default {
+  props:{
+    data:{
+      required: true
+    }
+  }
+}
+</script>

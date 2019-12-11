@@ -1,7 +1,103 @@
 {
   "work":[
     {
-
+      "name":"阿里布札的故事",
+      "date":"2017/8",
+      "sort":"landing",
+      "info":"一些基礎電商網站的功能練習體認到 BS 用法並不局限於文件的範例，還有很多可擴展的空間掌握 Ajax 抓取所需資料以生成介面。",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "tech":["HTML","CSS"],
+      "importance": null
+    },
+    {
+      "name":"欸欸欸欸欸",
+      "date":"2017/10",
+      "sort":"side",
+      "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "tech":["JavaScript","HTML","CSS","Vue"],
+      "importance": 2
+    },
+    {
+      "name":"欸欸欸欸欸",
+      "date":"2017/10",
+      "sort":"side",
+      "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "tech":["JavaScript","HTML","CSS","Vue"],
+      "importance": 2
+    },
+    {
+      "name":"欸欸欸欸欸",
+      "date":"2017/10",
+      "sort":"side",
+      "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "tech":["JavaScript","HTML","CSS","Vue"],
+      "importance": 2
+    },
+    {
+      "name":"欸欸欸欸欸",
+      "date":"2017/10",
+      "sort":"side",
+      "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "tech":["JavaScript","HTML","CSS","Vue"],
+      "importance": 2
+    },
+    {
+      "name":"欸欸欸欸欸",
+      "date":"2017/10",
+      "sort":"side",
+      "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "tech":["JavaScript","HTML","CSS","Vue"],
+      "importance": 2
+    },
+    {
+      "name":"欸欸欸欸欸",
+      "date":"2017/10",
+      "sort":"side",
+      "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "tech":["JavaScript","HTML","CSS","Vue"],
+      "importance": 2
+    },
+    {
+      "name":"欸欸欸欸欸",
+      "date":"2017/10",
+      "sort":"side",
+      "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "tech":["JavaScript","HTML","CSS","Vue"],
+      "importance": 2
+    },
+    {
+      "name":"欸欸欸欸欸",
+      "date":"2017/10",
+      "sort":"side",
+      "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "tech":["JavaScript","HTML","CSS","Vue"],
+      "importance": 2
+    },
+    {
+      "name":"欸欸欸欸欸",
+      "date":"2017/10",
+      "sort":"side",
+      "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "tech":["JavaScript","HTML","CSS","Vue"],
+      "importance": 2
+    },
+    {
+      "name":"欸欸欸欸欸",
+      "date":"2017/10",
+      "sort":"side",
+      "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "tech":["JavaScript","HTML","CSS","Vue"],
+      "importance": 2
     }
   ]
 }
