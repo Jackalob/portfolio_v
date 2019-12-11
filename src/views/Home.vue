@@ -21,22 +21,25 @@
   &-class {
     position: absolute;
     bottom: 100px;
-    font-size: 24px;
+    font-size: 18px;
     animation: enter .8s 1s both;
     opacity: 0;
   }
   &-motto {
     position: absolute;
-    bottom: 60px;
-    font-size: 24px;
-    animation: enter .8s 1.8s both;
-    opacity: 0;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
   }
 }
 
 @keyframes enter {
   0% {
     left: 500px;
+  }
+  70%{
+    left: -50px;
   }
   100% {
     left: 0;

@@ -44,7 +44,7 @@
 .container {
     @include container();
     padding: 0 10px;
-    width: 1440px;
+    width: 1280px;
 }
 .flex-space{
   flex-grow: 1;
