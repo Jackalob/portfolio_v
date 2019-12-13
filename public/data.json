@@ -2,102 +2,110 @@
   "work":[
     {
       "name":"阿里布札的故事",
-      "date":"2017/8",
+      "date":"2019/08",
       "sort":"landing",
       "info":"一些基礎電商網站的功能練習體認到 BS 用法並不局限於文件的範例，還有很多可擴展的空間掌握 Ajax 抓取所需資料以生成介面。",
-      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=AliStory",
       "tech":["HTML","CSS"],
-      "importance": null
+      "demo_url":"https://jackalob.github.io/github_demo/",
+      "github_url":"javascript:;",
+      "importance": 1
     },
     {
-      "name":"欸欸欸欸欸",
+      "name":"欸欸欸欸欸1",
       "date":"2017/10",
       "sort":"side",
       "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
-      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=aaaaaa1",
       "tech":["JavaScript","HTML","CSS","Vue"],
-      "importance": 2
+      "demo_url":"https://jackalob.github.io/github_demo/",
+      "github_url":"https://github.com/Jackalob/github_demo",
+      "importance": 0
     },
     {
-      "name":"欸欸欸欸欸",
-      "date":"2017/10",
+      "name":"Software developer",
+      "date":"2017/11",
       "sort":"side",
       "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
-      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=Softwaredeveloper",
       "tech":["JavaScript","HTML","CSS","Vue"],
-      "importance": 2
+      "demo_url":"https://jackalob.github.io/github_demo/",
+      "github_url":"https://github.com/Jackalob/github_demo",
+      "importance": 0
     },
     {
-      "name":"欸欸欸欸欸",
-      "date":"2017/10",
+      "name":"debug",
+      "date":"2016/03",
       "sort":"side",
       "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
-      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=debug",
       "tech":["JavaScript","HTML","CSS","Vue"],
-      "importance": 2
+      "importance": 0
     },
     {
-      "name":"欸欸欸欸欸",
-      "date":"2017/10",
+      "name":" CSS styles",
+      "date":"2016/10",
       "sort":"side",
       "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
-      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=css",
       "tech":["JavaScript","HTML","CSS","Vue"],
-      "importance": 2
+      "importance": 0
     },
     {
-      "name":"欸欸欸欸欸",
-      "date":"2017/10",
+      "name":"looked for a couple",
+      "date":"2018/07",
       "sort":"side",
       "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
-      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=lookforcouple",
       "tech":["JavaScript","HTML","CSS","Vue"],
-      "importance": 2
+      "demo_url":"https://jackalob.github.io/github_demo/",
+      "github_url":"https://github.com/Jackalob/github_demo",
+      "importance": 1
     },
     {
-      "name":"欸欸欸欸欸",
-      "date":"2017/10",
-      "sort":"side",
+      "name":"on the right side",
+      "date":"2019/03",
+      "sort":"landing",
       "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
-      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=rightside",
       "tech":["JavaScript","HTML","CSS","Vue"],
-      "importance": 2
+      "importance": 0
     },
     {
-      "name":"欸欸欸欸欸",
-      "date":"2017/10",
+      "name":"I recently came across a bug ",
+      "date":"2014/10",
       "sort":"side",
       "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
-      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=i",
       "tech":["JavaScript","HTML","CSS","Vue"],
-      "importance": 2
+      "importance": 1
     },
     {
-      "name":"欸欸欸欸欸",
-      "date":"2017/10",
+      "name":"Elements",
+      "date":"2017/11",
       "sort":"side",
       "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
-      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=elements",
       "tech":["JavaScript","HTML","CSS","Vue"],
-      "importance": 2
+      "importance": 0
     },
     {
-      "name":"欸欸欸欸欸",
-      "date":"2017/10",
+      "name":"Ghost CSS IDK",
+      "date":"2018/07",
       "sort":"side",
       "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
-      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=ghost",
       "tech":["JavaScript","HTML","CSS","Vue"],
-      "importance": 2
+      "importance": 0
     },
     {
-      "name":"欸欸欸欸欸",
-      "date":"2017/10",
+      "name":"How to Find 10",
+      "date":"2016/10",
       "sort":"side",
       "info":"這是我接觸 JavaScript 後第一個做出來的作品，配合 localStorage 操作 DOM 的更新，除了基礎的 CRUD 操作之外，還有標籤分類及切換分類頁面的功能，並且可以記錄上次用過的標籤。",
-      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=PJCHENder",
+      "img_url":"https://fakeimg.pl/440x300/282828/EAE0D0/?text=find10",
       "tech":["JavaScript","HTML","CSS","Vue"],
-      "importance": 2
+      "importance": 0
     }
   ]
 }

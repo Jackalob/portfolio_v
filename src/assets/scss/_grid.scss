@@ -1,7 +1,7 @@
 
 //算出gutter長度= width的五分之一
 @function gutter($num){
-    @return 100%/$num * 1/5;
+    @return 100%/$num * 0.5;
 }
 
 $cols: 24;
@@ -39,7 +39,7 @@ $grid-media: (
     @for $i from 0 through $cols{
         .col-#{$i}{
             width: col-width($i);
-            margin: 0 gutterOrNot($i) gutterOrNot($i);
+            margin: gutterOrNot($i) gutterOrNot($i) gutterOrNot($i);
         }
     }
     @each $key, $value in $grid-media{
@@ -47,7 +47,7 @@ $grid-media: (
             @for $i from 0 through $cols{
                 .col-#{$key}-#{$i}{
                     width: col-width($i);
-                    margin: 0 gutterOrNot($i) gutterOrNot($i);
+                    margin: gutterOrNot($i) gutterOrNot($i) gutterOrNot($i);
                 }
             }
         }
