@@ -1,7 +1,13 @@
 <template>
-  <div>exp</div>
+  <div></div>
 </template>
 
 <style lang="scss">
 
 </style>
+
+<script>
+export default {
+  
+}
+</script>
