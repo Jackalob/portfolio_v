@@ -140,6 +140,8 @@ export default {
         contact: 'Contact'
       }
     }
+  },
+  Mounted(){
   }
 }
 </script>

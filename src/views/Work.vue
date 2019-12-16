@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <component :is="nowComponent" :reArrangeData='reArrangeData'></component>
+    <component v-if='reArrangeData'  :is="nowComponent" :reArrangeData='reArrangeData'></component>
   </div>
 </template>
 

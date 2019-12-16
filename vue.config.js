@@ -1,3 +1,5 @@
+// const webpack = require('webpack');
+
 module.exports = {
   css: {
     loaderOptions: {
@@ -6,5 +8,18 @@ module.exports = {
       }
     }
   },
-  publicPath: process.env.NODE_ENV === "production" ? "/v-portfolio/" : "/"
+  publicPath: process.env.NODE_ENV === "production" ? "/v-portfolio/" : "/",
+  //é—œé–‰eslint
+  chainWebpack: config => {
+    config.module.rules.delete('eslint');
+  },
+  // configureWebpack: {    
+  //   plugins: [      
+  //       new webpack.ProvidePlugin({        
+  //           $: 'jquery',        
+  //           jQuery: 'jquery',        
+  //           'windows.jQuery': 'jquery'      
+  //       })    
+  //   ]  
+  // }
 };
