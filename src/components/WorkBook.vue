@@ -4,11 +4,14 @@
       <div class="hard">Turn.js</div>
       <div v-for="e in reArrangeData" :key="e.name">
         <div class="book-container">
-          <h1 class="book-name">{{ e.name }}</h1>
+          <h1 class="book-name">{{ e.name }}
+            <div class="book-hot" v-if="e.importance > 0">推薦</div>
+          </h1>
           <div class="book-img">
             <img :src="e.img_url">
           </div>
           <p class="book-info">{{ e.info }}</p>
+          <div class="book-more"><a href="javascript:;">More</a></div>
         </div>
       </div>
       <div v-if="reArrangeData % 2 !== 0">
@@ -106,18 +109,67 @@ export default {
   width: 100%;
   height: 100%;
   padding: 30px;
+  position: relative;
 }
 .book-name{
-
+  font-size: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 40px;
+  background-color: map-get($map: $color, $key: bookbg);
+  padding: 5px 10px;
+  border-radius: 5px;
+  .book-hot{
+    position: absolute;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #ffafaf 0%, #ff6f6f 90%);
+    color: map-get($map: $color, $key: tertiary);
+    top: 25px;
+    right: 40px;
+  }
 }
 .book-img{
+  margin: 25px 0;
   height: 40%;
+  background-color: map-get($color,bookbg);
+  border-radius: 5px;
   >img{
     width:100%;
     height: 100%;
   }
 }
 .book-info{
-
+  height: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  margin-bottom: 20px;
+  background-color: map-get($map: $color, $key: bookbg);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.book-more{
+  text-align: center;
+  background-color: map-get($color,bookbg);
+  padding: 5px 0;
+  border-radius: 5px;
+  >a{
+    padding: 5px 10px;
+    color: map-get($map: $color, $key: primary);
+    border: 2px solid map-get($map: $color, $key: primary);
+    background-color: map-get($color,tertiary);
+    border-radius: 5px;
+    transition: all .3s;
+    &:hover{
+      background-color: map-get($map: $color, $key: primary);
+      color: map-get($map: $color, $key: tertiary);
+    }
+  }
 }
 </style>
