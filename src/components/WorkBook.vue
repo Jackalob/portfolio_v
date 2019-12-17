@@ -4,8 +4,11 @@
       <div class="hard">Turn.js</div>
       <div v-for="e in reArrangeData" :key="e.name">
         <div class="book-container">
-          <p>{{ e.name }}</p>
-          <p>{{ e.info }}</p>
+          <h1 class="book-name">{{ e.name }}</h1>
+          <div class="book-img">
+            <img :src="e.img_url">
+          </div>
+          <p class="book-info">{{ e.info }}</p>
         </div>
       </div>
       <div v-if="reArrangeData % 2 !== 0">
@@ -99,9 +102,22 @@ export default {
   -o-box-shadow: 0 4px 10px #666;
   box-shadow: 0 4px 10px #666;
 }
-#flipbook .book-container{
+.book-container{
   width: 100%;
   height: 100%;
   padding: 20px;
+}
+.book-name{
+
+}
+.book-img{
+  height: 40%;
+  >img{
+    width:100%;
+    height: 100%;
+  }
+}
+.book-info{
+
 }
 </style>

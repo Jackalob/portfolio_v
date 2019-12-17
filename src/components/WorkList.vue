@@ -56,12 +56,22 @@
     </div>
     <div class="works-mask" v-if="cardStatus" @click="cardStatus = false"></div>
     <div class="works-bigInfo" v-if="cardStatus">
+      <div class="close-btn" @click="cardStatus = false">
+        <span></span>
+        <span></span>
+      </div>
       <div class="works-bigInfo-title">
         <h1>{{ showData.name }}</h1>
+        <h2>{{ showData.title}}</h2>
       </div>
       <div class="works-bigInfo-pics col-24">
         <img :src="showData.img_url" />
-        <div class="works-bigInfo-pics-tech"></div>
+        <div class="works-bigInfo-pics-tech" v-if='showData.techImg'>
+          <div v-for='(e,i) in showData.techImg' :key="e" class="tech-img">
+            <img :src="e">
+            <p>{{showData.tech[i]}}</p>
+          </div>
+        </div>
       </div>
       <div class="works-bigInfo-info">
         <div class="works-bigInfo-timeNinfo">
@@ -174,7 +184,7 @@
 //bigInfo
 .works-bigInfo {
   width: 990px;
-  background-color: map-get($map: $color, $key: primary);
+  background-color: map-get($map: $color, $key: card);
   height: 85%;
   position: absolute;
   top: 50%;
@@ -182,35 +192,130 @@
   transform: translate(-50%, -50%);
   border-radius: 5px;
   padding: 30px 40px 80px;
+  border: 1px solid map-get($map: $color, $key: hover);
+  .close-btn{
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    @include flex();
+    flex-direction: column;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    >span{
+      display: inline-block;
+      width: 100%;
+      height: 3px;
+      background-color: map-get($color,tertiary);
+      border-radius: 2px;
+      transition: all .3s;
+    }
+    span:nth-child(1){
+      transform: translateY(1.5px) rotate(45deg);
+    }
+    span:nth-child(2){
+      transform: translateY(-1.5px) rotate(-45deg);
+    }
+    &:hover{
+      span:nth-child(1){
+        transform: translateY(1.5px) rotate(225deg);
+      }
+      span:nth-child(2){
+        transform: translateY(-1.5px) rotate(-225deg);
+      }
+    }
+  }
   &-title {
     text-align: center;
     color: map-get($map: $color, $key: tertiary);
     padding-bottom: 20px;
     border-bottom: 1px solid map-get($map: $color, $key: hover);
     > h1 {
-      font-size: 40 px;
+      font-size: 40px;
+    }
+    >h2{
+      font-size: 20px;
+      font-weight: 400;
+      margin-top: 10px;
     }
   }
   &-pics {
     padding: 40px 0;
     margin: 0 auto;
+    position: relative;
     > img {
       width: 500px;
       height: 300px;
       margin: 0 auto;
     }
+    &-tech{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      width: 20%;
+      height: 100%;
+      padding: 40px 0;
+      top: 0;
+      left: 79%;
+      .tech-img{
+        width: 35px;
+        height: 35px;
+        position: relative;
+        margin: 0 5px 5px 0;
+        &:hover{
+          >p{
+            opacity: 1;
+          }
+        }
+        >img{
+          width: 100%;
+          height: 100%;
+        }
+        >p{
+          position: absolute;
+          left: 50%;
+          top: -31px;
+          padding: 5px 10px;
+          font-size: 14px;
+          letter-spacing: 1px;
+          transform: translateX(-50%);
+          color: map-get($map: $color, $key: tertiary);
+          background-color: rgba(0,0,0,.5);
+          border-radius: 5px;
+          opacity: 0;
+          user-select: none;
+          @include pseudo(after){
+            width: 0;
+            height: 0;
+            border-width: 12px;
+            border-style: solid;
+            border-color: rgba(20,20,20,.8) transparent transparent transparent;
+            left: 51%;
+            bottom: -23px;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
   }
   &-info {
-    padding-top: 40px;
+    padding: 25px 0;
     border-top: 1px solid map-get($map: $color, $key: hover);
     color: map-get($map: $color, $key: tertiary);
   }
   &-timeNinfo {
     font-size: 18px;
     p:nth-child(1) {
-      font-size: 14px;
+      font-size: 12px;
       color: map-get($map: $color, $key: hover);
       margin-bottom: 8px;
+      text-align: center;
+    }
+    p:nth-child(2) {
+      color: map-get($map: $color, $key: secondary);
     }
   }
   &-btn {
@@ -228,7 +333,7 @@
       width: 100px;
       padding: 5px 10px;
       font-weight: 700;
-      background-color: map-get($color,primary);
+      background-color: map-get($color,card);
       color: map-get($map: $color, $key: tertiary);
       transition: all .3s;
       &:hover{
