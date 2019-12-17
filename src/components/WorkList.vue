@@ -167,6 +167,7 @@
   > img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 }
 .card-title {
@@ -250,6 +251,7 @@
       width: 500px;
       height: 300px;
       margin: 0 auto;
+      object-fit: cover;
     }
     &-tech{
       position: absolute;
