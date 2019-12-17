@@ -84,7 +84,6 @@
         <a :target="showData.github_url==='javascript:;'?'':'_blank'" v-if="showData.github_url" :href="showData.github_url">Github</a>
       </div>
     </div>
-    
   </div>
 </template>
 
@@ -193,7 +192,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 30px 40px 80px;
   border: 1px solid map-get($map: $color, $key: hover);
   .close-btn{
