@@ -145,6 +145,8 @@
   }
 }
 .card-img {
+  width: 100%;
+  height: 200px;
   padding: 7px 0;
   position: relative;
   &-tag {
