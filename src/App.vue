@@ -38,6 +38,7 @@
   -moz-osx-font-smoothing: grayscale;
   background-color: map-get($color, secondary);
   color: map-get($map: $color, $key: primary);
+  -webkit-user-drag: none;
 }
 
 //utils

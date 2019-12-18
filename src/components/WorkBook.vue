@@ -7,7 +7,7 @@
             <h1 class="book-h1">PORTFOLIO</h1>
           </div>
           <div class="book-tuna">
-            <img src="@/assets/tuna.png" />
+            <img draggable="false" src="@/assets/tuna.png" />
           </div>
         </div>
       </div>

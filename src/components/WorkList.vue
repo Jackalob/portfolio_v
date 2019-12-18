@@ -43,7 +43,7 @@
           "
         >
           <div class="card-img">
-            <img :src="e.img_url" />
+            <img draggable="false" :src="e.img_url" />
             <div class="card-img-tag" v-if="e.importance > 0">推薦</div>
           </div>
           <div class="card-title">{{ e.name }}</div>
@@ -162,6 +162,7 @@
     );
     color: map-get($map: $color, $key: secondary);
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    user-select: none;
   }
   > img {
     width: 100%;
