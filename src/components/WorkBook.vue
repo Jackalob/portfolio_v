@@ -3,9 +3,11 @@
     <div id="flipbook">
       <div class="hard">
         <div class="book-container">
-          <div class="book-name">PORTFOLIO</div>
+          <div class="book-name">
+            <h1 class="book-h1">PORTFOLIO</h1>
+          </div>
           <div class="book-tuna">
-            <img src="@/assets/tuna.png">
+            <img src="@/assets/tuna.png" />
           </div>
         </div>
       </div>
@@ -35,7 +37,11 @@
       <div v-if="reArrangeData % 2 !== 0">
         <div class="book-container"></div>
       </div>
-      <div class="hard"></div>
+      <div class="hard">
+        <div class="book-container">
+          <div class="book-end"></div>
+        </div>
+      </div>
     </div>
     <div class="works-mask" v-if="cardStatus" @click="cardStatus = false"></div>
     <div class="works-bigInfo" v-if="cardStatus">
@@ -157,7 +163,12 @@ export default {
   .book-container {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(45deg, rgba(10,141,232,1) 0%, rgba(91,170,247,1) 100%);
+    background: linear-gradient(
+      45deg,
+      rgba(10, 141, 232, 1) 0%,
+      rgba(91, 170, 247, 1) 100%
+    );
+    user-select: none;
     &::before,
     &::after {
       content: "";
@@ -169,7 +180,7 @@ export default {
       border-radius: 45%;
       background-color: #fff;
       transform: translateX(-50%); // 居中
-      animation: rotate 15s linear infinite;
+      animation: rotate 15s linear infinite both;
       background-color: map-get($map: $color, $key: tertiary);
     }
     &::before {
@@ -178,35 +189,86 @@ export default {
       opacity: 0.5;
     }
   }
-  .book-name{
-    // display: inline-block;
-    // width: 80%;
+  .book-name {
     position: absolute;
-    top: 0;
-    left: 0;
+    font-size: 36px;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 2;
+    text-align: center;
+    .book-h1 {
+      padding: 0px 15px;
+      position: relative;
+      background-color: #893933;
+      border-radius: 5px;
+      color: map-get($map: $color, $key: tertiary);
+      @include pseudo{
+        width: 100%;
+        height: 10px;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #893933;
+        border-radius: 5px;
+      }
+      @include pseudo(after){
+        width: 100%;
+        height: 10px;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #893933;
+        border-radius: 5px;
+      }
+    }
   }
-  .book-tuna{
-    width: 0%;
+  .book-tuna {
+    width: 50%;
     position: absolute;
     bottom: 10%;
     right: 20px;
     z-index: 2;
-    >img{
+    animation: fishMove 5s ease-in-out infinite both;
+    > img {
       width: 100%;
       height: 100%;
     }
   }
+  .book-end{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 35px solid #893933;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
 }
 @keyframes rotate {
-  from {
+  0% {
     transform: translateX(-50%) rotateZ(0deg);
   }
-  to {
+  100% {
     transform: translateX(-50%) rotateZ(360deg);
   }
 }
-
+@keyframes fishMove{
+  0%{
+    transform: rotate(10deg);
+    bottom: 20%;
+  }
+  25%{
+    transform: rotate(-50deg);
+  }
+  50%{
+    bottom: 8%;
+  }
+  100%{
+    transform: rotate(10deg);
+    bottom: 20%;
+  }
+}
 #flipbook .odd {
   background: -webkit-gradient(
     linear,
@@ -270,6 +332,7 @@ export default {
     color: map-get($map: $color, $key: tertiary);
     top: 17px;
     right: 40px;
+    user-select: none;
   }
 }
 .book-img {
