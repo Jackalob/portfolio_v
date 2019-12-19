@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class='form-btn'>
-        <button class='form-btn-submit' type="submit">SUBMIT</button>
+        <button class='form-btn-submit' type="submit" @click="waveEvent" ref="btnSubmit">SUBMIT</button>
       </div>
     </form>
   </div>
@@ -96,7 +96,7 @@
           width: 30px;
           height: 30px;
           position: absolute;
-          background-color: rgba(#fff,.1);
+          background-color: rgba(#fff,.2);
           border-radius: 50%;
         }
       }
@@ -153,6 +153,19 @@ export default {
       this.emailStatus =  list[num2]
       this.subjectStatus =  list[num3]
       this.messageStatus =  list[num4]
+    },
+    waveEvent(e){
+      let left = e.pageX - this.$refs.btnSubmit.getClientRects()[0].left + 'px'
+      let top = e.pageY -  this.$refs.btnSubmit.getClientRects()[0].top + 'px'
+      let dom = document.createElement('div');
+      dom.id = 'wave-effect';
+      dom.style.left = left;
+      dom.style.top = top;
+      dom.style.animation = 'wave .8s linear';
+      this.$refs.btnSubmit.appendChild(dom);
+      setTimeout(() => {
+        document.querySelector('#wave-effect').remove();
+      }, 800);
     }
   },
   watch:{
@@ -162,17 +175,6 @@ export default {
     messageStatus(){},
   },
   mounted(){
-    document.querySelector('.form-btn>button').addEventListener('click',function(e){
-      let left = e.pageX - this.getClientRects()[0].left + 'px'
-      let top = e.pageY - this.getClientRects()[0].top + 'px'
-      this.innerHTML += `<div id='wave-effect' style='top:${top};left:${left};animation: wave .8s linear;'></div>`
-      setTimeout(() => {
-        document.querySelector('#wave-effect').remove();
-      }, 700);
-      // document.querySelector('#wave-effect').addEventListener('animationend',function(){
-      //   this.remove()
-      // })
-    })
   }
 }
 </script>
