@@ -30,7 +30,8 @@
 <style lang='scss'>
   .contact{
     width: 100%;
-    height: 110%;
+    height: 100%;
+    @include flex();
   }
   .form{
     background-color: map-get($color,tertiary);
@@ -39,10 +40,6 @@
     padding: 40px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(10,10,10,.1);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     &-title{
       text-align: center;
       color: map-get($map: $color, $key: accent2);
