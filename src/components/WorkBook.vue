@@ -148,14 +148,14 @@ export default {
   overflow: hidden;
 }
 #flipbook {
-  width: 80%;
-  height: 600px;
+  width: 90%;
+  height: 650px;
 }
 #flipbook .page {
   background-color: white;
 }
 #flipbook .page-wrapper {
-  perspective: 2200px;
+  perspective: 3000px;
 }
 #flipbook .hard {
   color: #333;
@@ -165,8 +165,8 @@ export default {
     overflow: hidden;
     background: linear-gradient(
       45deg,
-      rgba(10, 141, 232, 1) 0%,
-      rgba(91, 170, 247, 1) 100%
+      #5eb0fe 0%,
+      #0a8de8 100%
     );
     user-select: none;
     &::before,
@@ -203,6 +203,7 @@ export default {
       background-color: #893933;
       border-radius: 5px;
       color: map-get($map: $color, $key: tertiary);
+      font-family: 'Courgette', cursive;
       @include pseudo{
         width: 100%;
         height: 10px;

@@ -33,7 +33,7 @@
 #app {
   width: 100%;
   height: 100%;
-  font-family: sans-serif, "Noto Sans TC", "Noto Sans";
+  font-family: "Noto Sans" , "Noto Sans TC" , sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: map-get($color, secondary);
@@ -77,6 +77,7 @@ header {
         transform: translate(-50%, -50%);
         z-index: -1;
         border-radius: 5px;
+        transition: background-color .3s;
       }
       &:hover {
         &::before {
@@ -92,7 +93,7 @@ header {
   }
 }
 #nav a.router-link-exact-active {
-  color: darken(map-get($map: $color, $key: accent1),15);
+  color: map-get($map: $color, $key: accent2);
 }
 
 //logo
@@ -124,6 +125,7 @@ header {
   height: calc(100% - #{$headerH});
   .container{
     padding: 0 10px 40px 10px;
+    overflow: hidden;
   }
 }
 
