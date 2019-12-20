@@ -29,6 +29,7 @@
   overflow: hidden;
   border-radius: 50px;
   box-shadow: 5px 5px 10px rgba(#000,.1);
+  user-select: none;
   &-name {
     position: absolute;
     right: 60px;
