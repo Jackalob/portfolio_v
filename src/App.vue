@@ -16,7 +16,7 @@
           <router-link to="/about"><div @mouseover="navText.about='關於我'" @mouseleave="navText.about='About'">{{navText.about}}</div></router-link>
           <router-link :to="{ name: 'work' }"><div @mouseover="navText.work='作品集'" @mouseleave="navText.work='Work'">{{navText.work}}</div></router-link>
           <router-link :to="{ name: 'exp' }"><div @mouseover="navText.exp='工作經歷'" @mouseleave="navText.exp='Experience'">{{navText.exp}}</div></router-link>
-          <router-link :to="{ name: 'contact' }"><div @mouseover="navText.contact='聯絡資訊'" @mouseleave="navText.contact='Contact'">{{navText.contact}}</div></router-link>
+          <router-link :to="{ name: 'contact' }"><div @mouseover="navText.contact='與我聯絡'" @mouseleave="navText.contact='Contact'">{{navText.contact}}</div></router-link>
         </div>
       </div>
     </header>

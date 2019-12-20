@@ -201,7 +201,7 @@ export default {
       background-color: #893933;
       border-radius: 5px;
       color: map-get($map: $color, $key: tertiary);
-      font-family: "Courgette", cursive;
+      font-family: 'Courgette', "Noto Sans" , "Noto Sans TC" , sans-serif;
       @include pseudo {
         width: 100%;
         height: 10px;
