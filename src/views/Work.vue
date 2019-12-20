@@ -12,7 +12,9 @@
         </div>
       </div>
     </div>
+    <transition name="opacity"  mode="out-in">
     <component v-if='reArrangeData'  :is="nowComponent" :reArrangeData='reArrangeData'></component>
+    </transition>
   </div>
 </template>
 

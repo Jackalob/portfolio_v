@@ -22,7 +22,9 @@
     </header>
     <main class="main">
       <div class="container">
-        <router-view />
+      <transition name="zoom" mode="out-in" appear>
+          <router-view />
+      </transition>
       </div>
     </main>
   </div>
@@ -127,6 +129,74 @@ header {
     padding: 0 10px 40px 10px;
     overflow: hidden;
   }
+}
+//transition
+.opacity-enter-active, .opacity-leave-active{
+  transition: opacity .5s;
+}
+.opacity-enter, .opacity-leave-to{
+  opacity: 0;
+}
+.opacity-enter-to, .opacity-leave{
+  opacity: 1;
+}
+.bounce-enter-active{
+  animation: bounce-in .6s;
+}
+.bounce-leave-active{
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0%{
+    opacity: 0;
+    transform: scale(0) translate(-50%, -50%);
+    transform-origin: top left;
+  }
+  25%{
+    opacity: 1;
+  }
+  75%{
+    transform: scale(1.1) translate(-50%, -50%);
+    transform-origin: top left
+  }
+  100%{
+    transform: scale(1) translate(-50%, -50%);
+    transform-origin: top left
+  }
+}
+.zoom-enter-active{
+  animation: zoomInRight 1s ease-out;
+}
+.zoom-leave-active{
+  animation: zoomOutLeft 1s;
+}
+@keyframes zoomInRight{
+  0%{
+    opacity: 0;
+    transform: translate3d(1000px, 0, 0) scale3d(0.1, 0.1, 0.1);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  60%{
+    opacity: 1;
+    transform: translate3d(-42px, 0, 0)  scale3d(0.475, 0.475, 0.475);
+    // animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+    transform-origin: right center;
+  }
+}
+@keyframes zoomOutLeft{
+  40% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+  } 
+  100% {
+    opacity: 0;
+    transform: scale(0.1) translate3d(-2000px, 0, 0);
+    transform-origin: left center;
+  }
+}
+.ani{
+  animation-duration: 10s;
+  animation-delay: 0;
 }
 
 </style>

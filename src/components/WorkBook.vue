@@ -44,48 +44,50 @@
       </div>
     </div>
     <div class="works-mask" v-if="cardStatus" @click="cardStatus = false"></div>
-    <div class="works-bigInfo" v-if="cardStatus">
-      <div class="close-btn" @click="cardStatus = false">
-        <span></span>
-        <span></span>
-      </div>
-      <div class="works-bigInfo-title">
-        <h1>{{ showData.name }}</h1>
-        <h2>{{ showData.title }}</h2>
-      </div>
-      <div class="works-bigInfo-pics col-24">
-        <img :src="showData.img_url" />
-        <div class="works-bigInfo-pics-tech" v-if="showData.techImg">
-          <div v-for="(e, i) in showData.techImg" :key="e" class="tech-img">
-            <img :src="e" />
-            <p>{{ showData.tech[i] }}</p>
+    <transition name="bounce">
+      <div class="works-bigInfo" v-if="cardStatus">
+        <div class="close-btn" @click="cardStatus = false">
+          <span></span>
+          <span></span>
+        </div>
+        <div class="works-bigInfo-title">
+          <h1>{{ showData.name }}</h1>
+          <h2>{{ showData.title }}</h2>
+        </div>
+        <div class="works-bigInfo-pics col-24">
+          <img :src="showData.img_url" />
+          <div class="works-bigInfo-pics-tech" v-if="showData.techImg">
+            <div v-for="(e, i) in showData.techImg" :key="e" class="tech-img">
+              <img :src="e" />
+              <p>{{ showData.tech[i] }}</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="works-bigInfo-info">
-        <div class="works-bigInfo-timeNinfo">
-          <p>{{ showData.date }}</p>
-          <p>{{ showData.info }}</p>
+        <div class="works-bigInfo-info">
+          <div class="works-bigInfo-timeNinfo">
+            <p>{{ showData.date }}</p>
+            <p>{{ showData.info }}</p>
+          </div>
+        </div>
+        <div
+          class="works-bigInfo-btn"
+          v-if="showData.demo_url || showData.github_url"
+        >
+          <a
+            :target="showData.demo_url === 'javascript:;' ? '' : '_blank'"
+            v-if="showData.demo_url"
+            :href="showData.demo_url"
+            >Demo</a
+          >
+          <a
+            :target="showData.github_url === 'javascript:;' ? '' : '_blank'"
+            v-if="showData.github_url"
+            :href="showData.github_url"
+            >Github</a
+          >
         </div>
       </div>
-      <div
-        class="works-bigInfo-btn"
-        v-if="showData.demo_url || showData.github_url"
-      >
-        <a
-          :target="showData.demo_url === 'javascript:;' ? '' : '_blank'"
-          v-if="showData.demo_url"
-          :href="showData.demo_url"
-          >Demo</a
-        >
-        <a
-          :target="showData.github_url === 'javascript:;' ? '' : '_blank'"
-          v-if="showData.github_url"
-          :href="showData.github_url"
-          >Github</a
-        >
-      </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -144,7 +146,7 @@ export default {
   width: 100%;
   height: calc(100% - 60px);
   margin: 0 auto;
-  @include flex();
+  padding: 40px 0 0 5%;
   overflow: hidden;
 }
 #flipbook {
@@ -163,11 +165,7 @@ export default {
   .book-container {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(
-      45deg,
-      #5eb0fe 0%,
-      #0a8de8 100%
-    );
+    background: linear-gradient(45deg, #5eb0fe 0%, #0a8de8 100%);
     user-select: none;
     &::before,
     &::after {
@@ -203,8 +201,8 @@ export default {
       background-color: #893933;
       border-radius: 5px;
       color: map-get($map: $color, $key: tertiary);
-      font-family: 'Courgette', cursive;
-      @include pseudo{
+      font-family: "Courgette", cursive;
+      @include pseudo {
         width: 100%;
         height: 10px;
         bottom: -20px;
@@ -213,7 +211,7 @@ export default {
         background-color: #893933;
         border-radius: 5px;
       }
-      @include pseudo(after){
+      @include pseudo(after) {
         width: 100%;
         height: 10px;
         bottom: -40px;
@@ -236,7 +234,7 @@ export default {
       height: 100%;
     }
   }
-  .book-end{
+  .book-end {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -254,18 +252,18 @@ export default {
     transform: translateX(-50%) rotateZ(360deg);
   }
 }
-@keyframes fishMove{
-  0%{
+@keyframes fishMove {
+  0% {
     transform: rotate(10deg);
     bottom: 20%;
   }
-  25%{
+  25% {
     transform: rotate(-50deg);
   }
-  50%{
+  50% {
     bottom: 8%;
   }
-  100%{
+  100% {
     transform: rotate(10deg);
     bottom: 20%;
   }

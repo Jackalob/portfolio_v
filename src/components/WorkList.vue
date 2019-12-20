@@ -55,6 +55,7 @@
       </div>
     </div>
     <div class="works-mask" v-if="cardStatus" @click="cardStatus = false"></div>
+    <transition name="bounce">
     <div class="works-bigInfo" v-if="cardStatus">
       <div class="close-btn" @click="cardStatus = false">
         <span></span>
@@ -84,6 +85,7 @@
         <a :target="showData.github_url==='javascript:;'?'':'_blank'" v-if="showData.github_url" :href="showData.github_url">Github</a>
       </div>
     </div>
+    </transition>
   </div>
 </template>
 
@@ -191,7 +193,9 @@
   height: 85%;
   position: absolute;
   top: 50%;
+  bottom: 50%;
   left: 50%;
+  right: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
   padding: 30px 40px 80px;
