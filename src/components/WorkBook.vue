@@ -92,7 +92,8 @@
 </template>
 
 <script>
-import turn from "@/plugins/turn.min.js";
+import "@/plugins/turn.min.js";
+import $ from "jquery";
 export default {
   props: {
     reArrangeData: {
@@ -116,7 +117,6 @@ export default {
   },
   methods: {
     changeShowData(index) {
-      console.log("start-----");
       let temp = this.reArrangeData[index];
       temp.techImg = [];
       temp.tech.forEach(e => {
@@ -125,18 +125,20 @@ export default {
         }
       });
       this.showData = temp;
-      console.log("-----finish");
+    },
+    bookInit() {
+      $("#flipbook").turn({
+        autoCenter: true,
+        display: "double",
+        duration: 1000
+      });
     }
   },
   watch: {
     showData() {}
   },
   mounted() {
-    $("#flipbook").turn({
-      autoCenter: true,
-      display: "double",
-      duration: 1000
-    });
+    this.bookInit();
   }
 };
 </script>
@@ -151,7 +153,7 @@ export default {
 }
 #flipbook {
   width: 90%;
-  height: 650px;
+  height: 600px;
 }
 #flipbook .page {
   background-color: white;
@@ -201,7 +203,7 @@ export default {
       background-color: #893933;
       border-radius: 5px;
       color: map-get($map: $color, $key: tertiary);
-      font-family: 'Courgette', "Noto Sans" , "Noto Sans TC" , sans-serif;
+      font-family: "Courgette", "Noto Sans", "Noto Sans TC", sans-serif;
       @include pseudo {
         width: 100%;
         height: 10px;

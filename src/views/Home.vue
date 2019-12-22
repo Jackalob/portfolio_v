@@ -33,14 +33,14 @@
   &-name {
     position: absolute;
     right: 60px;
-    bottom: 180px;
+    bottom: 160px;
     animation: enter 1s .5s;
     font-size: 32px;
   }
   &-class {
     position: absolute;
     right: 60px;
-    bottom: 140px;
+    bottom: 120px;
     font-size: 24px;
     opacity: 0;
     animation: enter 1s 1s both;
@@ -68,7 +68,7 @@
   &-icons{
     position: absolute;
     right: 60px;
-    bottom: 85px;
+    bottom: 65px;
     @include flex();
     opacity: 0;
     animation: enter 1s 1.6s both;
