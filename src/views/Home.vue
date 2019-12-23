@@ -23,7 +23,8 @@
 <style lang="scss">
 .home {
   width: 100%;
-  height: 100%;
+  height: 90%;
+  margin-top: 30px;
   position: relative;
   background-color: white;
   overflow: hidden;

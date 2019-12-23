@@ -34,6 +34,8 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
+    border: 2px solid map-get($map: $color, $key: secondary);
+    border-radius: 5px;
     @include flex();
     &-fill{
       display: block;

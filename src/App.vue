@@ -126,7 +126,7 @@ header {
 .main{
   height: calc(100% - #{$headerH});
   .container{
-    padding: 0 10px 40px 10px;
+    padding: 10px;
     overflow: hidden;
   }
 }

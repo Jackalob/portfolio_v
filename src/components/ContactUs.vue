@@ -31,7 +31,7 @@
   .contact{
     width: 100%;
     height: 100%;
-    @include flex();
+    margin-top: 80px;
   }
   .form{
     background-color: map-get($color,tertiary);

@@ -9,7 +9,7 @@ module.exports = {
     }
   },
   publicPath: process.env.NODE_ENV === "production" ? "/v-portfolio/" : "/",
-  //é—œé–‰eslint
+  //關閉eslint
   chainWebpack: config => {
     config.module.rules.delete('eslint');
   },
