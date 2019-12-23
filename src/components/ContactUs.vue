@@ -35,7 +35,7 @@
   }
   .form{
     background-color: map-get($color,tertiary);
-    width: 700px;
+    width: 60%;
     margin: 0px auto;
     padding: 40px;
     border-radius: 10px;

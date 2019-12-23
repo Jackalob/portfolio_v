@@ -55,8 +55,8 @@
     font-family: 'Courgette', "Noto Sans" , "Noto Sans TC" , sans-serif;
   }
   &-pic{
-    width: 77%;
-    bottom: 40px;
+    width: 78%;
+    bottom: 50px;
     left: -118px;
     position: absolute;
     z-index: 1;
