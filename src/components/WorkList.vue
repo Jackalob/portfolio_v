@@ -275,7 +275,7 @@
         margin: 0 5px 5px 0;
         &:hover{
           >p{
-            opacity: 1;
+            display: block;
           }
         }
         >img{
@@ -293,8 +293,8 @@
           color: map-get($map: $color, $key: tertiary);
           background-color: rgba(0,0,0,.5);
           border-radius: 5px;
-          opacity: 0;
           user-select: none;
+          display: none;
           @include pseudo(after){
             width: 0;
             height: 0;
