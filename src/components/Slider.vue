@@ -17,6 +17,24 @@
       </div>
     </div>
     <div class='slider-btn-right' @click="calChange(1)" v-if='now<items.length-1'></div>
+    <ul class="bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
   </div>
 </template>
 
@@ -40,6 +58,7 @@
       position: absolute;
       transition: transform .3s ;
       left: 41.5%;
+      z-index: 1;
     }
     &-items{
       width: 130px;
@@ -85,6 +104,7 @@
       transform: translateY(-50%);
       cursor: pointer;
       transition: all .3s;
+      z-index: 1;
       @include pseudo(){
         width: 15px;
         height: 15px;
@@ -115,6 +135,7 @@
       text-align: center;
       position: absolute;
       bottom: 10px;
+      z-index: 1;
       &-round{
         padding: 5px;
         display: inline-block;
@@ -144,6 +165,145 @@
       .slider-btn-right{
         right: 0;
       }
+    }
+    @at-root .bubbles{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      transform: translateZ(0);
+      >li{
+        position: absolute;
+        display: block;
+        background-color: rgba(255,255,255,.2);
+        bottom: -100px;
+        animation: bubblego 10s linear infinite;
+        border-radius: 100%;
+        @include pseudo(){
+          left: 20%;
+          top: 21%;
+          width: 25%;
+          height: 25%;
+          background-color: rgba(255,255,255,.2);
+          border-radius: 100%;
+        }
+      }
+      li:nth-child(1){
+        width:20px;
+        height:20px;
+        left:15%;
+      }
+      li:nth-child(2){
+        width:40px;
+        height:40px;
+        left:40%;
+        animation-delay:2s;
+      }
+      li:nth-child(3){
+        width:25px;
+        height:25px;
+        left:30%;
+        animation-duration:9s;
+        animation-delay:3.5s;
+      }
+      li:nth-child(4){
+        width:60px;
+        height:60px;
+        left:55%;
+        animation-delay:2s;
+        animation-duration:15s;
+      }
+      li:nth-child(5){
+        width:20px;
+        height:20px;
+        left:35%;
+        animation-duration:11s;
+        animation-delay:1.5s;
+      }
+      li:nth-child(6){
+        width:25px;
+        height:25px;
+        left:20%;
+        animation-delay:3.5s;
+      }
+      li:nth-child(7){
+        width:25px;
+        height:25px;
+        left:15%;
+        animation-delay:5s;
+      }
+      li:nth-child(8){
+        width:20px;
+        height:20px;
+        left:75%;
+        animation-delay:3.5s;
+        animation-duration:8s;
+      }
+      li:nth-child(9){
+        width:25px;
+        height:25px;
+        left:95%;
+      }
+      li:nth-child(10){
+        width:60px;
+        height:60px;
+        left:85%;
+        animation-delay:3s;
+        animation-duration:13s;
+      }
+      li:nth-child(11){
+        width:20px;
+        height:20px;
+        left:65%;
+        animation-delay:3s;
+        animation-duration:8s;
+      }
+      li:nth-child(12){
+        width:30px;
+        height:30px;
+        left:70%;
+        animation-delay:2s;
+        animation-duration:7s;
+      }
+      li:nth-child(13){
+        width:20px;
+        height:20px;
+        left:85%;
+        animation-delay:6s;
+        animation-duration:12s;
+      }
+      li:nth-child(14){
+        width:25px;
+        height:25px;
+        left:85%;
+        animation-delay:2.5s;
+        animation-duration:8s;
+      }
+      li:nth-child(15){
+        width:30px;
+        height:30px;
+        left:95%;
+        animation-delay:3s;
+        animation-duration:12s;
+      }
+      li:nth-child(16){
+        width:60px;
+        height:60px;
+        left:5%;
+        animation-delay:6s;
+        animation-duration:15s;
+      }
+    }
+  }
+
+  @keyframes bubblego {
+    0%{
+      transform: translateY(0);
+    }
+    100%{
+      transform: translateY(-1080px);
     }
   }
 </style>

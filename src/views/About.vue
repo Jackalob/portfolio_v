@@ -6,7 +6,6 @@
     <div class="grid">
       <div class="col-6 about-profile">
         <div class="about-mypic">
-          <!--頭像-->
           <img src="https://i.imgur.com/I11QRsY.jpg">
         </div>
         <p class="about-myName">曹上傑</p>
@@ -25,7 +24,7 @@
     background-color: map-get($color,tertiary);
     &-wrap{
       padding: 20px 0;
-    }
+    }  
     &-profile{
       text-align: center;
     }
@@ -44,6 +43,7 @@
       font-size: 20px;
     }
   }
+
 </style>
 
 <script>
