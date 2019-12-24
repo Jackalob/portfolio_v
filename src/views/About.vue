@@ -44,7 +44,7 @@ export default {
         {name:'github',url:'https://i.imgur.com/2fb2xJB.png'},
         {name:'sourcetree',url:'https://www.minicreo.com/mac-uninstaller/img/sourcetree-mac-catalina.png'},
       ],
-      now: 0
+      now: 2
     }
   },
   components:{
