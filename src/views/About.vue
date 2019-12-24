@@ -4,9 +4,10 @@
       <slider :items='items' :now='now' @runChange='changeHandler'></slider>
     </div>
     <div class="grid">
-      <div class="col-6">
+      <div class="col-6 about-profile">
         <div class="about-mypic">
-          <img src="">
+          <!--頭像-->
+          <img src="https://i.imgur.com/I11QRsY.jpg">
         </div>
         <p class="about-myName">曹上傑</p>
       </div>
@@ -25,6 +26,23 @@
     &-wrap{
       padding: 20px 0;
     }
+    &-profile{
+      text-align: center;
+    }
+    &-mypic{
+      width: 200px;
+      height: 200px; 
+      margin: 0 auto;
+      >img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+    &-myName{
+      margin-top: 20px;
+      font-size: 20px;
+    }
   }
 </style>
 
@@ -40,9 +58,9 @@ export default {
         {name:'JavaScript',url:'https://img.icons8.com/color/256/000000/javascript.png'},
         {name:'jQuery',url:'https://i.imgur.com/lgAWIAL.png'},
         {name:'Vue',url:'https://i.imgur.com/7kQRg6J.png'},
-        {name:'git',url:'https://i.imgur.com/l5YHzCx.png'},
-        {name:'github',url:'https://i.imgur.com/2fb2xJB.png'},
-        {name:'sourcetree',url:'https://www.minicreo.com/mac-uninstaller/img/sourcetree-mac-catalina.png'},
+        {name:'Git',url:'https://i.imgur.com/l5YHzCx.png'},
+        {name:'GitHub',url:'https://i.imgur.com/2fb2xJB.png'},
+        {name:'Sourcetree',url:'https://www.minicreo.com/mac-uninstaller/img/sourcetree-mac-catalina.png'},
       ],
       now: 2
     }

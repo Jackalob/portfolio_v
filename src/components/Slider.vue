@@ -4,9 +4,9 @@
     <h2 class="slider-title">Skills & Tools</h2>
     <!-- ----------- -->
     <div class="slider-wrap" :style="{transform: 'translateX(' + (-170*now) +'px)'}">
-      <div class="slider-items" v-for="(e,i) in items" :key="e.name" :class="[i===now?'slider-now':'']" @click='goChange(i)'>
+      <div class="slider-items" v-for="(e,i) in items" :key="e.name" :class="[i===now?'slider-now':'']" :data-lang='e.name' @click='goChange(i)'>
         <div class="slider-items-wrap">
-          <img :src="e.url">
+          <img :src="e.url" draggable="false">
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
     overflow: hidden;
     &-title{
       position: absolute;
-      top: 12px;
+      top: 10px;
       font-size: 36px;
       color: map-get($map: $color, $key: tertiary);
       font-family: "Courgette", "Noto Sans", "Noto Sans TC", sans-serif;
@@ -49,6 +49,23 @@
       border-radius: 25px;
       transition: transform .3s ease-in-out;
       cursor: pointer;
+      user-select: none;
+      position: relative;
+      @include pseudo(){
+        content: attr(data-lang);
+        bottom: -23px;
+        left: 50%;
+        padding: 2px 5px;
+        background-color: rgba(0,0,0,.5);
+        color: map-get($map: $color, $key: tertiary);
+        border-radius: 4px;
+        font-size: 12px;
+        transform: translateX(-50%);
+        display: none;
+      }
+      &:hover::before{
+        display: block;
+      }
       &-wrap{
         width: 80px;
         height: 80px;
@@ -67,6 +84,7 @@
       position: absolute;
       transform: translateY(-50%);
       cursor: pointer;
+      transition: all .3s;
       @include pseudo(){
         width: 15px;
         height: 15px;
@@ -77,7 +95,7 @@
       }
     }
     &-btn-left{
-      left: 0;
+      left: -100px;
       top: 50%;
       &::before{
         transform: translateY(-50%) rotate(-135deg);
@@ -85,11 +103,11 @@
       }
     }
     &-btn-right{
-      right: 0;
+      right: -100px;
       top: 50%;
       &::before{
         transform: translateY(-50%) rotate(45deg);
-        left: 20%;
+        left: 10%;
       }
     }
     &-btn{
@@ -103,8 +121,8 @@
         cursor: pointer;
         >span{
           display: inline-block;
-          width: 15px;
-          height: 15px;
+          width: 12px;
+          height: 12px;
           background-color: rgba(map-get($color,hover),.5);
           border-radius: 50%;
         }
@@ -117,6 +135,14 @@
     &-btn-now{
       >span{
         background-color: rgba(map-get($map: $color, $key: slider_now),.7); 
+      }
+    }
+    &:hover{
+      .slider-btn-left{
+        left: 0;
+      }
+      .slider-btn-right{
+        right: 0;
       }
     }
   }
