@@ -37,6 +37,9 @@
     bottom: 160px;
     animation: enter 1s .5s;
     font-size: 32px;
+    @include media(home){
+      z-index: 2;
+    }
   }
   &-class {
     position: absolute;
@@ -44,7 +47,21 @@
     bottom: 120px;
     font-size: 24px;
     opacity: 0;
-    animation: enter 1s 1s both;
+    animation: enter 1s 1s forwards;
+  }
+  &-icons{
+    position: absolute;
+    right: 60px;
+    bottom: 65px;
+    @include flex();
+    opacity: 0;
+    animation: enter 1s 1.6s forwards;
+    &-item{
+      width: 45px;
+      height: 45px;
+      @include flex();
+      margin: 0 3px;
+    }
   }
   &-motto {
     position: absolute;
@@ -55,9 +72,9 @@
     font-family: 'Courgette', "Noto Sans" , "Noto Sans TC" , sans-serif;
   }
   &-pic{
-    width: 78%;
+    width: 985px;
     bottom: 50px;
-    left: -118px;
+    right: 31%;
     position: absolute;
     z-index: 1;
     >img{
@@ -66,25 +83,15 @@
       transform: scaleX(-1);
     }
   }
-  &-icons{
-    position: absolute;
-    right: 60px;
-    bottom: 65px;
-    @include flex();
-    opacity: 0;
-    animation: enter 1s 1.6s both;
-    &-item{
-      width: 45px;
-      height: 45px;
-      @include flex();
-      margin: 0 3px;
-    }
-  }
 }
 
 @keyframes enter {
   0% {
     right: 1000px;
+    opacity: 0;
+  }
+  30%{
+    opacity: 0;
   }
   70%{
     right: 30px;
@@ -92,6 +99,7 @@
   100% {
     right: 60px;
     opacity: 1;
+    z-index: 2;
   }
 }
 </style>

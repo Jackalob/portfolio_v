@@ -35,11 +35,14 @@
   }
   .form{
     background-color: map-get($color,tertiary);
-    width: 60%;
+    width: 750px;
     margin-bottom: 30px;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(10,10,10,.1);
+    @include media(contact){
+      width: 100%;
+    }
     &-title{
       text-align: center;
       color: map-get($map: $color, $key: accent2);

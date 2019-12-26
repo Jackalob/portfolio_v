@@ -48,6 +48,9 @@
     @include container();
     padding: 0 10px;
     width: 1280px;
+    @include media(home){
+      width: 95%;
+    }
 }
 .flex-space{
   flex-grow: 1;
@@ -62,6 +65,7 @@ header {
   .logo {
     height: 100%;
     padding: 15px 0;
+    min-width: 40px;
   }
   .link {
     height: 100%;

@@ -20,11 +20,14 @@
 
 <style lang='scss'>
   .about{
-    width: 80%;
+    width: 1000px;
     margin-bottom: 30px;
     background-color: map-get($color,tertiary);
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(#000,.1);
+    @include media(about){
+      width: 100%;
+    }
     &-title{
       text-align: center;
       padding: 20px 0;
@@ -38,13 +41,19 @@
       text-align: center;
     }
     &-mypic{
-      width: 200px;
-      height: 200px; 
-      margin: 0 auto;
+      width: 100%;
+      height: 0;
+      padding-top: 100%;
+      position: relative;
       >img{
         width: 100%;
         height: 100%;
         border-radius: 50%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 20px;
       }
     }
     &-myName{
