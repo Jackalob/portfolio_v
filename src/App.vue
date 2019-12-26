@@ -198,7 +198,6 @@ header {
   animation-duration: 10s;
   animation-delay: 0;
 }
-
 </style>
 
 <script>

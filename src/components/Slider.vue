@@ -1,7 +1,7 @@
 <template>
   <div class="slider">
     <!-- slider title -->
-    <h2 class="slider-title">Skills & Tools</h2>
+    <!-- <h2 class="slider-title">Skills & Tools</h2> -->
     <!-- ----------- -->
     <div class="slider-wrap" :style="{transform: 'translateX(' + (-170*now) +'px)'}">
       <div class="slider-items" v-for="(e,i) in items" :key="e.name" :class="[i===now?'slider-now':'']" :data-lang='e.name' @click='goChange(i)'>
@@ -10,13 +10,17 @@
         </div>
       </div>
     </div>
+    <transition name="goleft">
     <div class='slider-btn-left' @click="calChange(-1)" v-if="now>0"></div>
+    </transition>
     <div class="slider-btn">
       <div class="slider-btn-round" @click='goChange(i)' v-for="(e,i) in items" :key='e.name' :class="[i===now ? 'slider-btn-now':'']">
         <span></span>
       </div>
     </div>
+    <transition name='goright'>
     <div class='slider-btn-right' @click="calChange(1)" v-if='now<items.length-1'></div>
+    </transition>
     <ul class="bubbles">
         <li></li>
         <li></li>
@@ -44,15 +48,15 @@
     text-align: center;
     position: relative;
     @include flex(center,center,col);
-    height: 250px;
+    height: 180px;
     overflow: hidden;
-    &-title{
-      position: absolute;
-      top: 10px;
-      font-size: 36px;
-      color: map-get($map: $color, $key: tertiary);
-      font-family: "Courgette", "Noto Sans", "Noto Sans TC", sans-serif;
-    }
+    // &-title{
+    //   position: absolute;
+    //   top: 10px;
+    //   font-size: 36px;
+    //   color: map-get($map: $color, $key: tertiary);
+    //   font-family: "Courgette", "Noto Sans", "Noto Sans TC", sans-serif;
+    // }
     &-wrap{
       display: flex;
       position: absolute;
@@ -72,7 +76,7 @@
       position: relative;
       @include pseudo(){
         content: attr(data-lang);
-        bottom: -23px;
+        top:  -25px;
         left: 50%;
         padding: 2px 5px;
         background-color: rgba(0,0,0,.5);
@@ -134,7 +138,7 @@
       width: 100%;
       text-align: center;
       position: absolute;
-      bottom: 10px;
+      bottom: 4px;
       z-index: 1;
       &-round{
         padding: 5px;
@@ -270,7 +274,7 @@
       li:nth-child(13){
         width:20px;
         height:20px;
-        left:85%;
+        left:80%;
         animation-delay:6s;
         animation-duration:12s;
       }
@@ -297,13 +301,41 @@
       }
     }
   }
-
+  //transition
+  .goleft-enter-active{
+    animation: goLeftLeave .3s reverse;
+  }
+  .goleft-leave-active{
+    animation: goLeftLeave .3s;
+  }
+  .goright-enter-active{
+    animation: goRightLeave .3s reverse;
+  }
+  .goright-leave-active{
+    animation: goRightLeave .3s;
+  }
   @keyframes bubblego {
     0%{
       transform: translateY(0);
     }
     100%{
       transform: translateY(-1080px);
+    }
+  }
+  @keyframes goLeftLeave{
+    0%{
+      left: 0;
+    }
+    100%{
+      left: -100px;
+    }
+  }
+  @keyframes goRightLeave{
+    0%{
+      right: 0;
+    }
+    100%{
+      right: -100px;
     }
   }
 </style>

@@ -1,9 +1,10 @@
 <template>
   <div class="about">
+    <h1 class="about-title">Skills & Tools</h1>
     <div class="about-wrap">
       <slider :items='items' :now='now' @runChange='changeHandler'></slider>
     </div>
-    <div class="grid">
+    <div class="about-info grid">
       <div class="col-6 about-profile">
         <div class="about-mypic">
           <img src="https://i.imgur.com/I11QRsY.jpg">
@@ -22,9 +23,17 @@
     width: 80%;
     margin:  0 auto;
     background-color: map-get($color,tertiary);
-    &-wrap{
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px rgba(#000,.1);
+    &-title{
+      text-align: center;
       padding: 20px 0;
-    }  
+      font-family: "Courgette", "Noto Sans", "Noto Sans TC", sans-serif;
+      font-size: 48px;
+    }
+    &-info{
+      margin-top: 20px;
+    }
     &-profile{
       text-align: center;
     }
@@ -43,7 +52,9 @@
       font-size: 20px;
     }
   }
-
+  .slider{
+    box-shadow: 0px 5px 5px rgba(#000,.1);
+  }
 </style>
 
 <script>

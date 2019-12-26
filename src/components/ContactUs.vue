@@ -38,7 +38,7 @@
     width: 60%;
     margin: 0px auto;
     padding: 40px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(10,10,10,.1);
     &-title{
       text-align: center;
