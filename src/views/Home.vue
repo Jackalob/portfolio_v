@@ -24,7 +24,7 @@
 .home {
   width: 100%;
   height: 90%;
-  margin-top: 30px;
+  margin-bottom: 30px;
   position: relative;
   background-color: white;
   overflow: hidden;

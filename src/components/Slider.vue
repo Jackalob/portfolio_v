@@ -44,7 +44,8 @@
 
 <style lang="scss" scoped>
   .slider{
-    background-color: map-get($color,slider);
+    // background-color: map-get($color,slider);
+    background: linear-gradient(45deg, map-get($color,slider),map-get($color,accent2));
     text-align: center;
     position: relative;
     @include flex(center,center,col);
@@ -61,7 +62,8 @@
       display: flex;
       position: absolute;
       transition: transform .3s ;
-      left: 41.5%;
+      //50% 扣掉一格的(寬度+margin)/2
+      left: calc(50% - 85px);
       z-index: 1;
     }
     &-items{

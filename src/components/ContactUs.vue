@@ -31,12 +31,12 @@
   .contact{
     width: 100%;
     height: 100%;
-    margin-top: 80px;
+    @include flex();
   }
   .form{
     background-color: map-get($color,tertiary);
     width: 60%;
-    margin: 0px auto;
+    margin-bottom: 30px;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(10,10,10,.1);

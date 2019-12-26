@@ -21,7 +21,7 @@
 <style lang='scss'>
   .about{
     width: 80%;
-    margin:  0 auto;
+    margin-bottom: 30px;
     background-color: map-get($color,tertiary);
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(#000,.1);
@@ -32,7 +32,7 @@
       font-size: 48px;
     }
     &-info{
-      margin-top: 20px;
+      margin: 20px 0;
     }
     &-profile{
       text-align: center;

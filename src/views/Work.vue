@@ -20,6 +20,7 @@
 
 <style lang="scss">
   .work{
+    width: 100%;
     height: 100%;
   }
   .work-sort{

@@ -15,8 +15,8 @@
           <router-link to="/"><div @mouseover="navText.home='回到首頁'" @mouseleave="navText.home='Home'">{{navText.home}}</div></router-link>
           <router-link to="/about"><div @mouseover="navText.about='關於我'" @mouseleave="navText.about='About'">{{navText.about}}</div></router-link>
           <router-link :to="{ name: 'work' }"><div @mouseover="navText.work='作品集'" @mouseleave="navText.work='Work'">{{navText.work}}</div></router-link>
-          <router-link :to="{ name: 'exp' }"><div @mouseover="navText.exp='工作經歷'" @mouseleave="navText.exp='Experience'">{{navText.exp}}</div></router-link>
           <router-link :to="{ name: 'contact' }"><div @mouseover="navText.contact='與我聯絡'" @mouseleave="navText.contact='Contact'">{{navText.contact}}</div></router-link>
+          <a href="javascript:;" ><div @mouseover="navText.exp='工作經歷'" @mouseleave="navText.exp='Experience'">{{navText.exp}}</div></a>
         </div>
       </div>
     </header>
@@ -65,14 +65,14 @@ header {
   }
   .link {
     height: 100%;
-    > a {
+    > a{
       display: inline-block;
       position: relative;
       color: map-get($map: $color, $key: primary);
       z-index: 0;
       font-weight: 700;
       @include pseudo() {
-        width: 95%;
+        width: 80%;
         height: 50%;
         left: 50%;
         top: 50%;
@@ -90,6 +90,14 @@ header {
         width: 100px;
         line-height: 80px;
         text-align: center;
+      }
+    }
+    > a:last-child{
+      color: map-get($map: $color, $key: tertiary);
+      background-color: map-get($color,accent2);
+      // overflow: hidden;
+      &::before{
+        background-color: map-get($color,accent2);
       }
     }
   }
@@ -128,6 +136,7 @@ header {
   .container{
     padding: 10px;
     overflow: hidden;
+    @include flex();
   }
 }
 //transition
