@@ -73,7 +73,6 @@ header {
   @include media(tablet){
     height: $headerHMobile;
   }
-
   .container {
     @include flex(none, center);
   }
@@ -208,6 +207,9 @@ header {
   height: calc(100% - #{$headerH});
   @include media(tablet){
     height: calc(100% - #{$headerHMobile});
+  }
+  @include media(mobile){
+    height: auto;
   }
   .container{
     padding: 10px;

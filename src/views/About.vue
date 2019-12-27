@@ -5,13 +5,13 @@
       <slider :items='items' :now='now' @runChange='changeHandler'></slider>
     </div>
     <div class="about-info grid">
-      <div class="col-6 about-profile">
+      <div class="about-profile col-6">
         <div class="about-mypic">
           <img src="https://i.imgur.com/I11QRsY.jpg">
         </div>
         <p class="about-myName">曹上傑</p>
       </div>
-      <div class="about-self col-18">
+      <div class="about-self col-18 col-xs-24">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut voluptatibus numquam est ipsum ad praesentium eligendi at esse consequatur earum ratione fugiat rem exercitationem adipisci, temporibus iusto! Eaque nostrum doloremque, vitae magnam at ab, dolore voluptate temporibus enim debitis quidem modi tempore repellendus atque laudantium veniam beatae quasi suscipit adipisci officia libero! Ipsam numquam eius odit animi eveniet, rerum consequuntur.
       </div>
     </div>
@@ -25,6 +25,12 @@
     background-color: map-get($color,tertiary);
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(#000,.1);
+    @include media(mobile){
+      width: 100%;
+      height: calc(100vh - 80px);
+      margin-bottom: 0;
+      overflow-y: scroll;
+    }
     &-title{
       text-align: center;
       padding: 20px 0;
@@ -33,9 +39,16 @@
     }
     &-info{
       margin: 20px 0;
+      @include media(mobile){
+        margin: 0;
+        padding: 15px;
+      }
     }
     &-profile{
       text-align: center;
+      @include media(mobile){
+        display: none;
+      }
     }
     &-mypic{
       width: 100%;

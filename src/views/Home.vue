@@ -317,7 +317,7 @@
     margin-bottom: unset;
   }
   @include media(mobile) {
-    height: 100%;
+    height: calc(100vh - 80px);
   }
   &-name {
     position: absolute;
