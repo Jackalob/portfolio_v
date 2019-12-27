@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @click='burgerStatus = false'>
     <header id="nav">
       <div class="container">
         <a href="" style='display:inline-block'>
@@ -11,12 +11,17 @@
           </div>
         </a>
         <div class="flex-space"></div>
-        <div class="link">     
+        <div class="link" :class="{navOn:burgerStatus}" @click.stop="">     
           <router-link to="/"><div @mouseover="navText.home='回到首頁'" @mouseleave="navText.home='Home'">{{navText.home}}</div></router-link>
           <router-link to="/about"><div @mouseover="navText.about='關於我'" @mouseleave="navText.about='About'">{{navText.about}}</div></router-link>
           <router-link :to="{ name: 'work' }"><div @mouseover="navText.work='作品集'" @mouseleave="navText.work='Work'">{{navText.work}}</div></router-link>
           <router-link :to="{ name: 'contact' }"><div @mouseover="navText.contact='與我聯絡'" @mouseleave="navText.contact='Contact'">{{navText.contact}}</div></router-link>
           <a href="javascript:;" ><div @mouseover="navText.exp='工作經歷'" @mouseleave="navText.exp='Experience'">{{navText.exp}}</div></a>
+        </div>
+        <div class="burger" @click.stop="burgerStatus=!burgerStatus">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </header>
@@ -57,8 +62,13 @@
 }
 
 //header
+
+
 header {
   height: $headerH;
+  @include media(tablet){
+    height: $headerHMobile;
+  }
   .container {
     @include flex(none, center);
   }
@@ -69,6 +79,25 @@ header {
   }
   .link {
     height: 100%;
+    @include media(tablet){
+      position: fixed;
+      z-index: 10;
+      top: 70px;
+      right: 0;
+      height: auto;
+      box-shadow: -5px 5px 10px rgba(0,0,0,.2);
+      transform: scale(0);
+      opacity: 0;
+      transform-origin: 90% 0%;
+      transition: transform .3s ease-in-out , opacity .3s ease-in-out;
+      border-radius: 10px;
+      >a:first-child(){
+        border-radius: 10px 10px 0 0 ;
+      }
+      >a:last-child(){
+        border-radius: 0 0 10px 10px;
+      }
+    }
     > a{
       display: inline-block;
       position: relative;
@@ -85,6 +114,14 @@ header {
         border-radius: 5px;
         transition: background-color .3s;
       }
+      @include media(tablet){
+        display: block;
+        background-color: map-get($map: $color, $key: tertiary);
+        color: map-get($map: $color, $key: priamry);
+        &::before{
+          display: none;
+        }
+      }
       &:hover {
         &::before {
           background-color: map-get($color, hover);
@@ -92,8 +129,12 @@ header {
       }
       >div{
         width: 100px;
-        line-height: 80px;
+        line-height: $headerH;
         text-align: center;
+        @include media(tablet){
+          width: 150px;
+          line-height: $headerHMobile;
+        }
       }
     }
     > a:last-child{
@@ -104,6 +145,29 @@ header {
         background-color: map-get($color,accent2);
       }
     }
+  }
+  .burger{
+    width: $headerHMobile;
+    height: $headerHMobile;
+    @include flex(center,center,col);
+    padding: 15px;
+    cursor: pointer;
+    display: none;
+    @include media(tablet){
+      display: flex;
+    }
+    >span{
+      display: inline-block;
+      width: 100%;
+      height: 3px;
+      background-color: map-get($map: $color, $key: primary);
+      margin: 3px 0;
+    }
+  }
+  //status
+  .navOn{
+    transform: scale(1);
+    opacity: 1;
   }
 }
 #nav a.router-link-exact-active {
@@ -137,6 +201,9 @@ header {
 //main
 .main{
   height: calc(100% - #{$headerH});
+  @include media(tablet){
+    height: calc(100% - #{$headerHMobile});
+  }
   .container{
     padding: 10px;
     overflow: hidden;
@@ -223,10 +290,14 @@ export default {
         work: 'Work',
         exp: 'Experience',
         contact: 'Contact'
-      }
+      },
+      burgerStatus: false
     }
   },
   Mounted(){
+  },
+  watch:{
+    burgerStatus(){}
   }
 }
 </script>

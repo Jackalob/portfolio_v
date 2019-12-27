@@ -1,6 +1,7 @@
 $fz: 26px 18px 14px 2.5vw;
 $fw: 800 400;
 $headerH: 80px;
+$headerHMobile : 60px;
 
 $color: (
     primary: #404349,
@@ -21,9 +22,9 @@ $device: (
     home: 1350px,
     about: 1074px,
     contact: 810px,
-    pcsm: 950px,
-    tablet: 800px,
-    mobile: 670px
+    pcsm: 1200px,
+    tablet: 870px,
+    mobile: 576px
 );
 
 $jc-status:(

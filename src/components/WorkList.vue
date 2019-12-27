@@ -34,7 +34,7 @@
     <div class="works-space">
       <div class="grid">
         <div
-          class="works-card col-6"
+          class="works-card col-6 col-lg-8 col-md-12 col-sm-24"
           v-for="(e, i) in tempData"
           :key="e.name"
           @click="
@@ -147,9 +147,9 @@
 }
 .card-img {
   width: 100%;
-  height: 200px;
   padding: 7px 0;
   position: relative;
+  padding-top: 70%;
   &-tag {
     position: absolute;
     padding: 3px 6px;
@@ -170,12 +170,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 .card-title {
   color: map-get($map: $color, $key: primary);
   font-size: 18px;
   padding-left: 1px;
+  margin: 5px 0 2px;
 }
 //mask
 .works-mask {

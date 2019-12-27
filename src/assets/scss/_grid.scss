@@ -40,6 +40,7 @@ $grid-media: (
         .col-#{$i}{
             width: col-width($i);
             margin: gutterOrNot($i) gutterOrNot($i) gutterOrNot($i);
+            transition: all .3s;
         }
     }
     @each $key, $value in $grid-media{
@@ -48,6 +49,7 @@ $grid-media: (
                 .col-#{$key}-#{$i}{
                     width: col-width($i);
                     margin: gutterOrNot($i) gutterOrNot($i) gutterOrNot($i);
+                    transition: all .3s;
                 }
             }
         }
