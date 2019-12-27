@@ -40,9 +40,9 @@
     padding: 40px;
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(10,10,10,.1);
-    @include media(contact){
-      width: 100%;
-    }
+    // @include media(contact){
+    //   width: 100%;
+    // }
     &-title{
       text-align: center;
       color: map-get($map: $color, $key: accent2);

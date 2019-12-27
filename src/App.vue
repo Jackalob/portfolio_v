@@ -11,7 +11,7 @@
           </div>
         </a>
         <div class="flex-space"></div>
-        <div class="link" :class="{navOn:burgerStatus}" @click.stop="">     
+        <div class="link" :class="{navOn:burgerStatus}">     
           <router-link to="/"><div @mouseover="navText.home='回到首頁'" @mouseleave="navText.home='Home'">{{navText.home}}</div></router-link>
           <router-link to="/about"><div @mouseover="navText.about='關於我'" @mouseleave="navText.about='About'">{{navText.about}}</div></router-link>
           <router-link :to="{ name: 'work' }"><div @mouseover="navText.work='作品集'" @mouseleave="navText.work='Work'">{{navText.work}}</div></router-link>
@@ -36,26 +36,30 @@
 </template>
 
 <style lang="scss">
-
+body{
+  background-color: map-get($color, secondary);
+}
 #app {
   width: 100%;
   height: 100%;
   font-family: "Noto Sans" , "Noto Sans TC" , sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: map-get($color, secondary);
   color: map-get($map: $color, $key: primary);
   -webkit-user-drag: none;
 }
 
 //utils
 .container {
-    @include container();
-    padding: 0 10px;
-    width: 1280px;
-    @include media(home){
-      width: 95%;
-    }
+  @include container();
+  padding: 0 10px;
+  width: 1280px;
+  @include media(home){
+    width: 95%;
+  }
+  @include media(tablet){
+    width: 100%;
+  }
 }
 .flex-space{
   flex-grow: 1;
@@ -69,6 +73,7 @@ header {
   @include media(tablet){
     height: $headerHMobile;
   }
+
   .container {
     @include flex(none, center);
   }
@@ -82,8 +87,8 @@ header {
     @include media(tablet){
       position: fixed;
       z-index: 10;
-      top: 70px;
-      right: 0;
+      top: 60px;
+      right: 10px;
       height: auto;
       box-shadow: -5px 5px 10px rgba(0,0,0,.2);
       transform: scale(0);

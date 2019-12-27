@@ -25,9 +25,6 @@
     background-color: map-get($color,tertiary);
     border-radius: 30px;
     box-shadow: 5px 5px 10px rgba(#000,.1);
-    @include media(about){
-      width: 100%;
-    }
     &-title{
       text-align: center;
       padding: 20px 0;
