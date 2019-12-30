@@ -122,6 +122,9 @@
   border-radius: 5px;
   overflow-y: scroll;
   padding: 0.5%;
+  @include media(tablet){
+    height: calc(100vh - #{$headerHMobile} - 100px);
+  }
 }
 .works-card {
   background-color: map-get($color, tertiary);
@@ -204,6 +207,9 @@
   border-radius: 10px;
   padding: 30px 40px 80px;
   border: 1px solid map-get($map: $color, $key: hover);
+  @include media(tablet){
+    width: 85%;
+  }
   .close-btn{
     width: 60px;
     height: 60px;
