@@ -2,8 +2,8 @@ import Vue from 'vue'
 import './plugins/axios'
 import App from './App.vue'
 import router from './router'
-
-
+import VueTouch from 'vue-touch'
+Vue.use(VueTouch, {name: 'v-touch'})
 window.$ = window.jQuery = require('jquery');
 Vue.config.productionTip = false
 
