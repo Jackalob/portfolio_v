@@ -57,32 +57,40 @@
     <div class="works-mask" v-if="cardStatus" @click="cardStatus = false"></div>
     <transition name="bounce">
     <div class="works-bigInfo" v-if="cardStatus">
-      <div class="close-btn" @click="cardStatus = false">
-        <span></span>
-        <span></span>
-      </div>
-      <div class="works-bigInfo-title">
-        <h1>{{ showData.name }}</h1>
-        <h2>{{ showData.title}}</h2>
-      </div>
-      <div class="works-bigInfo-pics col-24">
-        <img :src="showData.img_url" />
-        <div class="works-bigInfo-pics-tech" v-if='showData.techImg'>
-          <div v-for='(e,i) in showData.techImg' :key="e" class="tech-img">
-            <img :src="e">
-            <p>{{showData.tech[i]}}</p>
+      <div class="works-bigInfo-container">
+        <div class="works-bigInfo-container-wrap">
+          <div class="close-btn" @click="cardStatus = false">
+            <span></span>
+            <span></span>
+          </div>
+          <div class="works-bigInfo-title">
+            <h1>{{ showData.name }}</h1>
+            <h2>{{ showData.title}}</h2>
+          </div>
+          <div class="works-bigInfo-pics col-24">
+            <div class="bigInfo-pics-wrap">
+              <img :src="showData.img_url" />
+            </div>
+            <div class="works-bigInfo-pics-tech" v-if='showData.techImg'>
+              <div v-for='(e,i) in showData.techImg' :key="e" class="tech-img">
+                <img :src="e">
+                <p>{{showData.tech[i]}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="works-bigInfo-info">
+            <div class="works-bigInfo-timeNinfo">
+              <p>{{ showData.date }}</p>
+              <p>{{ showData.info }}</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="works-bigInfo-info">
-        <div class="works-bigInfo-timeNinfo">
-          <p>{{ showData.date }}</p>
-          <p>{{ showData.info }}</p>
+      <div class="works-bigInfo-a">
+        <div class="works-bigInfo-btn" v-if="showData.demo_url || showData.github_url">
+          <a :target="showData.demo_url==='javascript:;'?'':'_blank'" v-if="showData.demo_url" :href="showData.demo_url">Demo</a>
+          <a :target="showData.github_url==='javascript:;'?'':'_blank'" v-if="showData.github_url" :href="showData.github_url">Github</a>
         </div>
-      </div>
-      <div class="works-bigInfo-btn" v-if="showData.demo_url || showData.github_url">
-        <a :target="showData.demo_url==='javascript:;'?'':'_blank'" v-if="showData.demo_url" :href="showData.demo_url">Demo</a>
-        <a :target="showData.github_url==='javascript:;'?'':'_blank'" v-if="showData.github_url" :href="showData.github_url">Github</a>
       </div>
     </div>
     </transition>
@@ -205,10 +213,28 @@
   right: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
-  padding: 30px 40px 80px;
   border: 1px solid map-get($map: $color, $key: hover);
   @include media(tablet){
     width: 85%;
+  }
+  @include media(tabletsm){
+    width: 90%;
+  }
+  @include media(mobile){
+    height: 90%;
+  }
+  &-container{
+    width: 100%;
+    height: calc(100% - 76px);
+    padding: 30px 40px;
+    @include media(mobile){
+      padding: 15px;
+    }
+    &-wrap{
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+    }
   }
   .close-btn{
     width: 60px;
@@ -220,6 +246,9 @@
     right: 10px;
     top: 10px;
     cursor: pointer;
+    @include media(mobile){
+      display: none;
+    }
     >span{
       display: inline-block;
       width: 100%;
@@ -250,24 +279,34 @@
     border-bottom: 1px solid map-get($map: $color, $key: hover);
     > h1 {
       font-size: 40px;
+      width: 90%;
+      margin: 0 auto;
     }
     >h2{
       font-size: 20px;
       font-weight: 400;
       margin-top: 10px;
+      @include media(mobile){
+        font-size: 16px;
+      }
+    }
+    @include media(mobile){
+      padding-bottom: 15px;
+      >h1{
+        font-size: 1.5rem;
+      }
     }
   }
   &-pics {
     padding: 40px 0;
-    margin: 0 auto;
     position: relative;
-    > img {
-      width: 500px;
-      height: 300px;
-      margin: 0 auto;
-      object-fit: cover;
+    @include media(tablet){
+      padding: 20px 0;
     }
-    &-tech{
+    @include media(mobile){
+      padding: 15px 0;
+    }
+    @at-root &-tech{
       position: absolute;
       display: flex;
       flex-direction: column;
@@ -278,6 +317,14 @@
       padding: 40px 0;
       top: 0;
       left: 79%;
+      @include media(tablet){
+        flex-direction: row;
+        position: unset;
+        width: 200px;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 15px 0 0;
+      }
       .tech-img{
         width: 35px;
         height: 35px;
@@ -319,10 +366,35 @@
       }
     }
   }
+  .bigInfo-pics-wrap{
+      width: 500px;
+      height: 300px;
+      margin: 0 auto;
+      @include media(tabletsm){
+        width: 100%;
+        height: 0;
+        padding-top: 60%;
+        position: relative;
+      }
+      > img {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        object-fit: cover;
+        @include media(tabletsm){
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
   &-info {
-    padding: 25px 0;
+    padding: 25px 0 10px;
     border-top: 1px solid map-get($map: $color, $key: hover);
     color: map-get($map: $color, $key: tertiary);
+    @include media(mobile){
+      padding:  15px 0 5px;
+    }
   }
   &-timeNinfo {
     font-size: 18px;
@@ -334,14 +406,19 @@
     }
     p:nth-child(2) {
       color: map-get($map: $color, $key: secondary);
+      @include media(mobile){
+        font-size: 16px;
+      }
     }
   }
+  &-a{
+    @include flex();
+    height: 76px;
+    background-color: map-get($color,bigInfo_bot);
+    border-radius: 0 0 10px 10px;
+  }
   &-btn {
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    bottom: 35px;
-    transform: translateX(-50%);
+    display: flex;
     padding: 4px;
     border-radius: 5px;
     border: 2px solid map-get($map: $color, $key: tertiary);
@@ -351,7 +428,6 @@
       width: 100px;
       padding: 5px 10px;
       font-weight: 700;
-      background-color: map-get($color,card);
       color: map-get($map: $color, $key: tertiary);
       transition: all .3s;
       &:hover{
