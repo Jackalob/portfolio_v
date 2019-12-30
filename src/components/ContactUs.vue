@@ -2,11 +2,13 @@
   <div class="contact" @click="changeHandler(0,0,0,0)">
     <form class="form" action="https://getform.io/f/8fe3c85a-7427-4b9e-a26a-11b04eabb635" method="POST">
       <h1 class="form-title form-grid">Let's get in touch</h1>
-      <div class="grid form-grid ">
-        <div class="col-12 form-wrap" data='Name' :class="[name || nameStatus ? 'status-on':'', {'selected': nameStatus} ]">
+      <div class="grid form-grid form-grid-1">
+        <div class="col-24 col-xs-24 form-wrap" data='Name' :class="[name || nameStatus ? 'status-on':'', {'selected': nameStatus} ]">
           <input class="form-input" type="text" name='name' required v-model="name" @click.stop="changeHandler(1,0,0,0)" @select="changeHandler(1,0,0,0)">
         </div>
-        <div class="col-12 form-wrap" data='Email' :class="[email || emailStatus ? 'status-on':'', {'selected': emailStatus} ]">
+      </div>
+      <div class="grid form-grid form-grid-1">  
+        <div class="col-24 col-xs-24 form-wrap" data='Email' :class="[email || emailStatus ? 'status-on':'', {'selected': emailStatus} ]">
           <input class="form-input" type="email" name='email' required v-model="email" @click.stop="changeHandler(0,1,0,0)" @select="changeHandler(0,1,0,0)">
         </div>
       </div>
@@ -32,6 +34,9 @@
     width: 100%;
     height: 100%;
     @include flex();
+    @include media(mobile){
+      height: calc(100vh - 80px);
+    }
   }
   .form{
     background-color: map-get($color,tertiary);
@@ -40,14 +45,19 @@
     padding: 40px;
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(10,10,10,.1);
-    // @include media(contact){
-    //   width: 100%;
-    // }
+    @include media(mobile){
+      width: 100%;
+      margin-bottom: 0;
+      padding: 20px;
+    }
     &-title{
       text-align: center;
       color: map-get($map: $color, $key: accent2);
       font-family: 'Courgette', "Noto Sans" , "Noto Sans TC" , sans-serif;
       font-size: 40px;
+      @include media(mobile){
+        font-size: 29px;
+      }
     }
     &-wrap{
       position: relative;
@@ -74,13 +84,23 @@
     &-input{
       width: 100%;
       height: 40px;
-      padding: 10px 10px;
+      padding: 10px;
       border-radius: 6px;
       border: 1px solid map-get($map: $color, $key: contact_b);
       outline: none;
     }
     &-grid{
       margin-bottom: 35px;
+      @include media(mobile){
+        margin-bottom: 20px;
+      }
+      &-1{
+        width: 50%;
+        display: inline-block;
+        @include media(mobile){
+          width: 100%;
+        }
+      }
     }
     &-btn{
       text-align: center;

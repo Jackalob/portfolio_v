@@ -40,6 +40,7 @@ body{
   background-color: map-get($color, secondary);
 }
 #app {
+  min-width: 320px;
   width: 100%;
   height: 100%;
   font-family: "Noto Sans" , "Noto Sans TC" , sans-serif;
