@@ -1,6 +1,5 @@
 <template>
-  <div class="slider">
-    <v-touch v-on:swipeleft="calChange(1)" v-on:swiperight="calChange(-1)" style="width:100%;height:100%;position:absolute;z-index:1;"></v-touch>
+  <v-touch class="slider" v-on:swipeleft="calChange(1)" v-on:swiperight="calChange(-1)">
     <!-- <h2 class="slider-title">Skills & Tools</h2> -->
     <div class="slider-wrap" :style="{transform: 'translateX(' + (-170*now) +'px)'}">
       <div class="slider-items" v-for="(e,i) in items" :key="e.name" :class="[i===now?'slider-now':'']" :data-lang='e.name' @click='goChange(i)'>
@@ -38,7 +37,7 @@
         <li></li>
         <li></li>
       </ul>
-  </div>
+  </v-touch>
 </template>
 
 <style lang="scss" scoped>
@@ -357,8 +356,10 @@ export default {
   },
   methods:{
     calChange(x){
-      x += this.now;
-      this.goChange(x);
+      if(x+this.now>=0 && x+this.now<this.items.length){
+        x += this.now;
+        this.goChange(x);
+      }
     },
     goChange(x){
       this.$emit("runChange",x)
