@@ -36,6 +36,8 @@
 </template>
 
 <style lang="scss">
+@import "@/assets/scss/style.scss";
+
 body{
   background-color: map-get($color, secondary);
 }
@@ -67,8 +69,6 @@ body{
 }
 
 //header
-
-
 header {
   height: $headerH;
   @include media(tablet){
@@ -101,6 +101,7 @@ header {
       }
       >a:last-child(){
         border-radius: 0 0 10px 10px;
+        border-bottom: none;
       }
     }
     > a{
@@ -123,6 +124,7 @@ header {
         display: block;
         background-color: map-get($map: $color, $key: tertiary);
         color: map-get($map: $color, $key: priamry);
+        border-bottom: 1px dashed map-get($map: $color, $key: hover);
         &::before{
           display: none;
         }
@@ -218,6 +220,7 @@ header {
     @include flex();
   }
 }
+
 //transition
 .opacity-enter-active, .opacity-leave-active{
   transition: opacity .5s;
