@@ -22,14 +22,7 @@
           </div>
           <p class="book-info">{{ e.info }}</p>
           <div class="book-more">
-            <a
-              href="javascript:;"
-              @click="
-                cardStatus = true;
-                changeShowData(i);
-              "
-              >More</a
-            >
+            <a href="javascript:;" @click="cardStatus = true ; changeShowData(i);" >More</a>
           </div>
           <span class="book-page">{{ i + 1 }}</span>
         </div>
@@ -46,45 +39,34 @@
     <div class="works-mask" v-if="cardStatus" @click="cardStatus = false"></div>
     <transition name="bounce">
       <div class="works-bigInfo" v-if="cardStatus">
-        <div class="close-btn" @click="cardStatus = false">
-          <span></span>
-          <span></span>
-        </div>
-        <div class="works-bigInfo-title">
-          <h1>{{ showData.name }}</h1>
-          <h2>{{ showData.title }}</h2>
-        </div>
-        <div class="works-bigInfo-pics col-24">
-          <img :src="showData.img_url" />
-          <div class="works-bigInfo-pics-tech" v-if="showData.techImg">
-            <div v-for="(e, i) in showData.techImg" :key="e" class="tech-img">
-              <img :src="e" />
-              <p>{{ showData.tech[i] }}</p>
+        <div class="works-bigInfo-container">
+          <div class="works-bigInfo-container-wrap">
+            <div class="close-btn" @click="cardStatus = false">
+              <span></span>
+              <span></span>
+            </div>
+            <div class="works-bigInfo-title">
+              <h1>{{ showData.name }}</h1>
+              <h2>{{ showData.title}}</h2>
+            </div>
+            <div class="works-bigInfo-pics col-24">
+              <div class="bigInfo-pics-wrap">
+                <img :src="showData.img_url" />
+              </div>
+              <div class="works-bigInfo-pics-tech" v-if='showData.techImg'>
+                <div v-for='(e,i) in showData.techImg' :key="e" class="tech-img">
+                  <img :src="e">
+                  <p>{{showData.tech[i]}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="works-bigInfo-info">
+              <div class="works-bigInfo-timeNinfo">
+                <p>{{ showData.date }}</p>
+                <p>{{ showData.info }}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="works-bigInfo-info">
-          <div class="works-bigInfo-timeNinfo">
-            <p>{{ showData.date }}</p>
-            <p>{{ showData.info }}</p>
-          </div>
-        </div>
-        <div
-          class="works-bigInfo-btn"
-          v-if="showData.demo_url || showData.github_url"
-        >
-          <a
-            :target="showData.demo_url === 'javascript:;' ? '' : '_blank'"
-            v-if="showData.demo_url"
-            :href="showData.demo_url"
-            >Demo</a
-          >
-          <a
-            :target="showData.github_url === 'javascript:;' ? '' : '_blank'"
-            v-if="showData.github_url"
-            :href="showData.github_url"
-            >Github</a
-          >
         </div>
       </div>
     </transition>

@@ -137,12 +137,13 @@
 .works-card {
   background-color: map-get($color, tertiary);
   padding: 10px 15px;
-  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   cursor: pointer;
   transition: box-shadow 0.3s;
   &:hover {
-    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4) );
   }
 }
 .card-top {
@@ -234,6 +235,7 @@
       width: 100%;
       height: 100%;
       overflow-y: scroll;
+      overflow-x: hidden;
     }
   }
   .close-btn{
