@@ -18,7 +18,7 @@
             <div class="book-hot" v-if="e.importance > 0">推薦</div>
           </h1>
           <div class="book-img">
-            <img :src="e.img_url" />
+            <img :src="compilePath(e.img_url)" />
           </div>
           <p class="book-info">{{ e.info }}</p>
           <div class="book-more">
@@ -51,7 +51,7 @@
             </div>
             <div class="works-bigInfo-pics col-24">
               <div class="bigInfo-pics-wrap">
-                <img :src="showData.img_url" />
+                <img :src="compilePath(showData.img_url)" />
               </div>
               <div class="works-bigInfo-pics-tech" v-if='showData.techImg'>
                 <div v-for='(e,i) in showData.techImg' :key="e" class="tech-img">
@@ -66,6 +66,12 @@
                 <p>{{ showData.info }}</p>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="works-bigInfo-a">
+          <div class="works-bigInfo-btn" v-if="showData.demo_url || showData.github_url">
+            <a :target="showData.demo_url==='javascript:;'?'':'_blank'" v-if="showData.demo_url" :href="showData.demo_url">Demo</a>
+            <a :target="showData.github_url==='javascript:;'?'':'_blank'" v-if="showData.github_url" :href="showData.github_url">Github</a>
           </div>
         </div>
       </div>
@@ -114,6 +120,9 @@ export default {
         display: "double",
         duration: 1000
       });
+    },
+    compilePath(str){
+      return  require(`@/assets/thumbnail/`+str);
     }
   },
   watch: {
