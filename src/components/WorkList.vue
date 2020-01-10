@@ -165,8 +165,8 @@
   &-tag {
     position: absolute;
     padding: 3px 6px;
-    left: 8px;
-    top: 16px;
+    left: 12px;
+    top: 14px;
     font-size: 14px;
     border-radius: 3px;
     background: linear-gradient(
