@@ -15,7 +15,16 @@
         class="works-classify-option"
         @click="
           workSort = 100;
-          getLandingData();
+          getSpecData('side');
+        "
+        >Side Project</a
+      >
+      <a
+        href="javascript:;"
+        class="works-classify-option"
+        @click="
+          workSort = 200;
+          getSpecData('landing');
         "
         >Landing</a
       >
@@ -23,10 +32,10 @@
         href="javascript:;"
         class="works-classify-option"
         @click="
-          workSort = 200;
-          getSideData();
+          workSort = 300;
+          getSpecData('layout');
         "
-        >SideProject</a
+        >Layout</a
       >
       <div class="works-classify-line" :style="{ left: workSort + 'px' }"></div>
     </div>
@@ -488,19 +497,10 @@ export default {
     getAllData() {
       this.tempData = JSON.parse(JSON.stringify(this.reArrangeData));
     },
-    getLandingData() {
+    getSpecData(type){
       let temp = [];
-      this.reArrangeData.forEach(e => {
-        if (e.sort === "landing") {
-          temp.push(e);
-        }
-      });
-      this.tempData = temp;
-    },
-    getSideData() {
-      let temp = [];
-      this.reArrangeData.forEach(e => {
-        if (e.sort === "side") {
+      this.reArrangeData.forEach(e =>{
+        if(e.sort === type){
           temp.push(e);
         }
       });
