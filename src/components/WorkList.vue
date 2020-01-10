@@ -43,7 +43,7 @@
           "
         >
           <div class="card-img">
-            <img draggable="false" :src="e.img_url" />
+            <img draggable="false" :src="compilePath(e.img_url)" />
             <div class="card-img-tag" v-if="e.importance > 0">推薦</div>
           </div>
           <div class="card-title">{{ e.name }}</div>
@@ -69,7 +69,7 @@
           </div>
           <div class="works-bigInfo-pics col-24">
             <div class="bigInfo-pics-wrap">
-              <img :src="showData.img_url" />
+              <img :src="compilePath(showData.img_url)" />
             </div>
             <div class="works-bigInfo-pics-tech" v-if='showData.techImg'>
               <div v-for='(e,i) in showData.techImg' :key="e" class="tech-img">
@@ -136,7 +136,7 @@
 }
 .works-card {
   background-color: map-get($color, tertiary);
-  padding: 10px 15px;
+  padding: 15px;
   box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   cursor: pointer;
@@ -183,6 +183,7 @@
     height: 100%;
     object-fit: cover;
     position: absolute;
+    border-radius: 5px;
     top: 0;
     left: 0;
   }
@@ -383,6 +384,7 @@
         height: 100%;
         margin: 0 auto;
         object-fit: cover;
+        border-radius: 5px;
         @include media(tabletsm){
           position: absolute;
           top: 0;
@@ -503,6 +505,9 @@ export default {
         }
       });
       this.tempData = temp;
+    },
+    compilePath(str){
+      return  require(`@/assets/thumbnail/`+str);
     }
   },
   watch: {
