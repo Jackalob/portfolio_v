@@ -27,7 +27,7 @@
           <span class="book-page">{{ i + 1 }}</span>
         </div>
       </div>
-      <div v-if="reArrangeData % 2 !== 0">
+      <div v-if="reArrangeData.length % 2 !== 0">
         <div class="book-container"></div>
       </div>
       <div class="hard">
