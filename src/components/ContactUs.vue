@@ -4,22 +4,22 @@
       <h1 class="form-title form-grid">Let's get in touch</h1>
       <div class="grid form-grid form-grid-1">
         <div class="col-24 col-xs-24 form-wrap" data='Name' :class="[name || nameStatus ? 'status-on':'', {'selected': nameStatus} ]">
-          <input class="form-input" type="text" name='name' required v-model="name" @click.stop="changeHandler(1,0,0,0)" @select="changeHandler(1,0,0,0)">
+          <input class="form-input" type="text" name='name' tabIndex='1' required v-model="name" @click.stop="changeHandler(1,0,0,0)" @select="changeHandler(1,0,0,0)" @keydown.tab='changeHandler(0,1,0,0)'>
         </div>
       </div>
       <div class="grid form-grid form-grid-1">  
         <div class="col-24 col-xs-24 form-wrap" data='Email' :class="[email || emailStatus ? 'status-on':'', {'selected': emailStatus} ]">
-          <input class="form-input" type="email" name='email' required v-model="email" @click.stop="changeHandler(0,1,0,0)" @select="changeHandler(0,1,0,0)">
+          <input class="form-input" type="email" name='email' tabIndex='2' required v-model="email" @click.stop="changeHandler(0,1,0,0)" @select="changeHandler(0,1,0,0)" @keydown.tab='changeHandler(0,0,1,0)'>
         </div>
       </div>
       <div class="grid form-grid">
         <div class="col-24 form-wrap" data='Subject' :class="[subject || subjectStatus ? 'status-on':'', {'selected': subjectStatus} ]">
-          <input class="form-input" type="text" name='subject' required v-model="subject" @click.stop="changeHandler(0,0,1,0)" @select="changeHandler(0,0,1,0)">
+          <input class="form-input" type="text" name='subject' tabIndex='3' required v-model="subject" @click.stop="changeHandler(0,0,1,0)" @select="changeHandler(0,0,1,0)" @keydown.tab='changeHandler(0,0,0,1)'>
         </div>
       </div>
       <div class="grid form-grid">
         <div class="col-24 form-wrap form-wrap-textarea" data='Message' :class="[message || messageStatus ? 'status-on':'', {'selected': messageStatus} ]">
-          <textarea class="form-text form-input" name='message' style='resize:none' required v-model="message" @click.stop="changeHandler(0,0,0,1)" @select="changeHandler(1,0,0,0)"></textarea>
+          <textarea class="form-text form-input" name='message' tabIndex='4' style='resize:none' required v-model="message" @click.stop="changeHandler(0,0,0,1)" @select="changeHandler(1,0,0,0)" @keydown.tab='changeHandler(0,0,0,0)'></textarea>
         </div>
       </div>
       <div class='form-btn'>
@@ -189,7 +189,7 @@ export default {
       setTimeout(() => {
         document.querySelector('#wave-effect').remove();
       }, 800);
-    }
+    },
   },
   watch:{
     nameStatus(){},
