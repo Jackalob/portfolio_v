@@ -16,7 +16,7 @@
           <router-link to="/about"><div @mouseover="navText.about='關於我'" @mouseleave="navText.about='About'">{{navText.about}}</div></router-link>
           <router-link :to="{ name: 'work' }"><div @mouseover="navText.work='作品集'" @mouseleave="navText.work='Work'">{{navText.work}}</div></router-link>
           <router-link :to="{ name: 'contact' }"><div @mouseover="navText.contact='與我聯絡'" @mouseleave="navText.contact='Contact'">{{navText.contact}}</div></router-link>
-          <a href="javascript:;" ><div @mouseover="navText.exp='工作經歷'" @mouseleave="navText.exp='Experience'">{{navText.exp}}</div></a>
+          <a href="https://www.cakeresume.com/s---6-pDbd0wNeoz_4_eYWL8Q--/cj3su3Kdj" target="_blank" ><div @mouseover="navText.exp='工作經歷'" @mouseleave="navText.exp='Experience'">{{navText.exp}}</div></a>
         </div>
         <div class="burger" @click.stop="burgerStatus=!burgerStatus">
           <span></span>
