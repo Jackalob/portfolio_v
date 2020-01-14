@@ -354,8 +354,8 @@
         >p{
           position: absolute;
           left: 50%;
-          top: -31px;
-          padding: 5px 10px;
+          top: -20px;
+          padding: 0px 10px;
           font-size: 14px;
           letter-spacing: 1px;
           transform: translateX(-50%);
@@ -479,7 +479,8 @@ export default {
         vue: "https://img.icons8.com/color/48/000000/vue-js.png",
         react: "https://img.icons8.com/color/48/000000/react-native.png",
         angular: "https://img.icons8.com/color/48/000000/angularjs.png",
-        jquery: "https://i.imgur.com/YY7DOKz.png"
+        jquery: "https://i.imgur.com/YY7DOKz.png",
+        pixi:"https://i.imgur.com/jQoGfi3.png"
       }
     };
   },
