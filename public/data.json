@@ -35,6 +35,30 @@
       "demo_url":"https://jackalob.github.io/github_demo/",
       "github_url":"https://github.com/Jackalob/github_demo",
       "importance": 1
+    },
+    {
+      "name":"Basic Practice",
+      "date":"2019/11",
+      "sort":"layout",
+      "title":"實作一個運用多種常見功能的網站。",
+      "info":"練習在時限內運用輪播效果以及Grid System做出一個RWD設計的網頁。",
+      "img_url":"grid.jpg",
+      "tech":["HTML","CSS","javascript"],
+      "demo_url":"https://jackalob.github.io/layout/redo",
+      "github_url":"https://github.com/Jackalob/layout/tree/master/redo",
+      "importance": 0
+    },
+    {
+      "name":"Mapper Walker",
+      "date":"2019/12",
+      "sort":"side",
+      "title":"鼓勵家長和小朋友參與活動而為手機用戶所製作出的產品。",
+      "info":"以小組分工合作的方式，針對特定主題做出的產品。利用提供的api，把位置顯示在Google Maps上，結合各種不同的功能，例如篩選功能、定位功能、任務列表等。記錄到過的地點並給予回饋，讓家長不用煩惱該帶小朋友去哪玩，同時也能夠滿足小朋友的好奇心與探索慾。",
+      "img_url":"mapperwalker.jpg",
+      "tech":["HTML","CSS","javascript","vue","pixi"],
+      "demo_url":null,
+      "github_url":null,
+      "importance": 2
     }
   ]
 }
