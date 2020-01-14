@@ -335,6 +335,10 @@
       animation: table-enter 1s 0.5s forwards;
       width: 100%;
     }
+    @include media(mobile){
+      top: unset;
+      bottom: 210px;
+    }
   }
   &-class {
     position: absolute;
@@ -349,6 +353,10 @@
       transform: translateX(50%);
       animation: table-enter 1s 1s forwards;
       width: 100%;
+    }
+    @include media(mobile){
+      top: unset;
+      bottom: 160px;
     }
   }
   &-icons {
@@ -365,6 +373,10 @@
       transform: translateX(50%);
       animation: table-enter 1s 1.6s forwards;
     }
+    @include media(mobile){
+      top: unset;
+      bottom: 100px;
+    }
     &-item {
       width: 45px;
       height: 45px;
@@ -380,7 +392,7 @@
     z-index: 2;
     font-family: "Courgette", "Noto Sans", "Noto Sans TC", sans-serif;
     @include media(tablet) {
-      width: 280px;
+      width: 290px;
       right: 50%;
       transform: translateX(50%);
     }
