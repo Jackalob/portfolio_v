@@ -16,7 +16,7 @@
           <p>淡江大學資管系畢業</p>
           <div class="about-subTitle-mail">
             <div>
-              Email: <span id='copiedMessage'>nike9712@gmail.com</span>
+              Email: <a href='mailto:nike9712@gmail.com' id='copiedMessage' style='text-decoration:underline; color:#24c98f;'>nike9712@gmail.com</a>
             </div>
             <div class="about-subTitle-wrap">
               <div class="about-subTitle-svg" @click='copyEmail("copiedMessage")'>
