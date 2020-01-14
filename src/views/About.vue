@@ -109,6 +109,7 @@
     }
     @at-root &-mail{
       display: flex;
+      font-size: 16px;
       @include media(mobile){
         justify-content: center;
       }
@@ -144,6 +145,19 @@
           border-right: 6px solid rgba(20,20,20,.8);
           left: -11px;
           top: 7px;
+        }
+        @include media(mobile){
+          top: -25px;
+          left: 50%;
+          transform: translate(-50%,-50%);
+          &::before{
+            border-top:6px solid rgba(20, 20, 20, 0.8); 
+            border-right: 5px solid transparent;
+            top: unset;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+          }
         }
       }
     }
