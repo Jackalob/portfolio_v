@@ -19,7 +19,7 @@
         "
         >Side Project</a
       >
-      <a
+      <!-- <a
         href="javascript:;"
         class="works-classify-option"
         @click="
@@ -27,12 +27,12 @@
           getSpecData('landing');
         "
         >Landing</a
-      >
+      > -->
       <a
         href="javascript:;"
         class="works-classify-option"
         @click="
-          workSort = 300;
+          workSort = 200;
           getSpecData('layout');
         "
         >Layout</a
