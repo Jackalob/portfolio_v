@@ -18,8 +18,10 @@
             <div>
               Email: <span id='copiedMessage'>nike9712@gmail.com</span>
             </div>
-            <div class="about-subTitle-svg" @click='copyEmail("copiedMessage")'>
-              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#24c98f"><path d="M63.06667,11.46667c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v91.73333c0,6.33533 5.13133,11.46667 11.46667,11.46667h74.53333c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-65.93333c0,-1.51933 -0.60182,-2.97578 -1.67969,-4.05365l-31.53333,-31.53333c-1.07787,-1.07787 -2.53431,-1.67969 -4.05364,-1.67969zM108.93333,22.38464l29.21536,29.21536h-23.48203c-3.1648,0 -5.73333,-2.56853 -5.73333,-5.73333zM34.4,40.13333c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v91.73333c0,6.33533 5.13133,11.46667 11.46667,11.46667h74.53333c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-5.73333h-57.33333c-12.64773,0 -22.93333,-10.2856 -22.93333,-22.93333v-74.53333z"></path></g></g></svg>
+            <div class="about-subTitle-wrap">
+              <div class="about-subTitle-svg" @click='copyEmail("copiedMessage")'>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#24c98f"><path d="M63.06667,11.46667c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v91.73333c0,6.33533 5.13133,11.46667 11.46667,11.46667h74.53333c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-65.93333c0,-1.51933 -0.60182,-2.97578 -1.67969,-4.05365l-31.53333,-31.53333c-1.07787,-1.07787 -2.53431,-1.67969 -4.05364,-1.67969zM108.93333,22.38464l29.21536,29.21536h-23.48203c-3.1648,0 -5.73333,-2.56853 -5.73333,-5.73333zM34.4,40.13333c-6.33533,0 -11.46667,5.13133 -11.46667,11.46667v91.73333c0,6.33533 5.13133,11.46667 11.46667,11.46667h74.53333c6.33533,0 11.46667,-5.13133 11.46667,-11.46667v-5.73333h-57.33333c-12.64773,0 -22.93333,-10.2856 -22.93333,-22.93333v-74.53333z"></path></g></g></svg>
+              </div>
               <div class="about-subTitle-svg-copied" ref="copiedText">Copied</div>
             </div>
           </div>
@@ -108,29 +110,33 @@
     @at-root &-mail{
       display: flex;
       @include media(mobile){
-      justify-content: center;
+        justify-content: center;
+      }
     }
+    @at-root &-wrap{
+      position: relative;
     }
     @at-root &-svg{
       @include flex(); 
-      width: 24px;
-      height: 24px;
+      width: 25px;
+      height: 25px;
       cursor: pointer;
-      position: relative;
       >svg{
         width: 80%;
-        height: 90%;
+        height: 100%;
       }
       &-copied{
         position: absolute;
         font-size: 12px;
         padding: 5px 10px;
+        top: 0;
         left: 35px;
         border-radius: 3px;
         background-color: rgba(20,20,20,.8);
         color: map-get($map: $color, $key: tertiary);
-        transition: opacity .3s ease-in-out;
         opacity: 0;
+        transition: opacity .2s ease-in-out;
+        user-select: none;
         @include pseudo(){
           width: 0;
           height: 0;
@@ -207,7 +213,7 @@ export default {
       this.$refs.copiedText.classList.add('opa-1')
       setTimeout(() => {
         this.$refs.copiedText.classList.remove('opa-1')
-      }, 1500);
+      }, 2000);
     }
   }
 };
