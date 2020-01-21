@@ -100,7 +100,7 @@ export default {
       this.nowComponent = name
     },
     getData(){
-      axios.get('/data.json')
+      axios.get('./data.json')
       .then(res=>{
         this.data = res.data.work
         this.reArrangeData = this.getReArrangeData()
