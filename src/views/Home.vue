@@ -326,18 +326,14 @@
     opacity: 0;
     animation: enter 1s 0.5s forwards;
     font-size: 32px;
-    @include media(tablet) {
-      bottom: unset;
-      top: 210px;
+    @include media(mobile) {
+      top: unset;
+      bottom: 210px;
       right: 50%;
       opacity: 0;
       transform: translateX(50%);
       animation: table-enter 1s 0.5s forwards;
       width: 100%;
-    }
-    @include media(mobile){
-      top: unset;
-      bottom: 210px;
     }
   }
   &-class {
@@ -347,16 +343,12 @@
     font-size: 24px;
     opacity: 0;
     animation: enter 1s 1s forwards;
-    @include media(tablet) {
-      bottom: unset;
-      top: 260px;
-      transform: translateX(50%);
-      animation: table-enter 1s 1s forwards;
-      width: 100%;
-    }
     @include media(mobile){
       top: unset;
       bottom: 160px;
+      transform: translateX(50%);
+      animation: table-enter 1s 1s forwards;
+      width: 100%;
     }
   }
   &-icons {
@@ -366,16 +358,11 @@
     @include flex();
     opacity: 0;
     animation: enter 1s 1.6s forwards;
-    @include media(tablet) {
-      bottom: unset;
-      top: 300px;
-      right: 50%;
-      transform: translateX(50%);
-      animation: table-enter 1s 1.6s forwards;
-    }
     @include media(mobile){
       top: unset;
-      bottom: 100px;
+      bottom: 100px;right: 50%;
+      transform: translateX(50%);
+      animation: table-enter 1s 1.6s forwards;
     }
     &-item {
       width: 45px;
@@ -391,7 +378,10 @@
     font-size: 48px;
     z-index: 2;
     font-family: "Courgette", "Noto Sans", "Noto Sans TC", sans-serif;
-    @include media(tablet) {
+    @include media(tablet){
+      font-size: 40px;
+    }
+    @include media(mobile) {
       width: 290px;
       right: 50%;
       transform: translateX(50%);
