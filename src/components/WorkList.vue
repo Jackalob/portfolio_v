@@ -43,7 +43,7 @@
     <div class="works-space">
       <div class="grid">
         <div
-          class="works-card col-6 col-md-8 col-sm-12 col-xs-24"
+          class="works-card col-6 col-sm-12 col-xs-24"
           v-for="(e, i) in tempData"
           :key="e.name"
           @click="
