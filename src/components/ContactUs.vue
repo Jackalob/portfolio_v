@@ -45,10 +45,14 @@
     padding: 40px;
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(10,10,10,.1);
+    @include media(tablet){
+      padding: 30px;
+      margin-bottom: 10px;
+    }
     @include media(mobile){
       width: 100%;
-      margin-bottom: 0;
       padding: 20px;
+      margin-bottom: 0px;
     }
     &-title{
       text-align: center;
@@ -91,7 +95,7 @@
     }
     &-grid{
       margin-bottom: 35px;
-      @include media(mobile){
+      @include media(tablet){
         margin-bottom: 20px;
       }
       &-1{
