@@ -1,0 +1,64 @@
+{
+  "work":[
+    {
+      "name":"15 puzzle",
+      "date":"2019/06",
+      "sort":"side",
+      "title":"透過移動方塊，使所有的方塊順著數字的次序排列。",
+      "info":"藉由新增事件，使電腦版與手機板的判斷方式不同，電腦版使用點擊判斷是否可以交換數字，手機版則是以滑動方式判斷，同時正確的位置則以不同顏色做出顯示。",
+      "img_url":"15puzzle.jpg",
+      "tech":["HTML","CSS","javascript","jquery"],
+      "demo_url":"https://jackalob.github.io/15puzzle/",
+      "github_url":"https://github.com/Jackalob/15puzzle",
+      "importance": 0
+    },
+    {
+      "name":"15 puzzle (Vue)",
+      "date":"2019/11",
+      "sort":"side",
+      "title":"透過移動方塊，讓所有的方塊順著數字的次序排列。",
+      "info":"主要目的為熟悉vue的使用方式，以內嵌script的方式引入vue重製15 puzzle，簡化步驟，並做出困難程度的選項來讓使用者依照喜好選擇難度。",
+      "img_url":"15puzzlevue.jpg",
+      "tech":["HTML","CSS","javascript","vue"],
+      "demo_url":"https://jackalob.github.io/15puzzle_vue/",
+      "github_url":"https://github.com/Jackalob/15puzzle_vue",
+      "importance": 0
+    },
+    {
+      "name":"Repo Searcher",
+      "date":"2019/12",
+      "sort":"side",
+      "title":"簡化官方複雜的操作流程，並結合自己常用的功能做出的工具。",
+      "info":"以axios抓取GitHub API中所需的資料，針對時間做出排序，再結合方便常用的功能。例如歷史搜尋紀錄、鍵盤按鍵綁定等，做出動態查詢，最後使用自製的Grid System方便排版。",
+      "img_url":"repoSearcher.jpg",
+      "tech":["HTML","CSS","javascript","vue"],
+      "demo_url":"https://jackalob.github.io/github_demo/",
+      "github_url":"https://github.com/Jackalob/github_demo",
+      "importance": 1
+    },
+    {
+      "name":"Basic Practice",
+      "date":"2019/11",
+      "sort":"layout",
+      "title":"實作一個運用多種常見功能的網站。",
+      "info":"練習在時限內運用輪播效果以及Grid System做出一個RWD設計的網頁。",
+      "img_url":"grid.jpg",
+      "tech":["HTML","CSS","javascript"],
+      "demo_url":"https://jackalob.github.io/layout/redo",
+      "github_url":"https://github.com/Jackalob/layout/tree/master/redo",
+      "importance": 0
+    },
+    {
+      "name":"Mapper Walker",
+      "date":"2019/12",
+      "sort":"side",
+      "title":"鼓勵家長和小朋友參與活動而為手機用戶所製作出的產品。",
+      "info":"以小組分工合作的方式，針對特定主題做出的產品。利用提供的api，把位置顯示在Google Maps上，結合各種不同的功能，例如篩選功能、定位功能、任務列表等。記錄到過的地點並給予回饋。透過這個產品，能讓家長不用煩惱該帶小朋友去哪裡玩，也能夠滿足小朋友的好奇心與探索慾。",
+      "img_url":"mapperwalker.jpg",
+      "tech":["HTML","CSS","javascript","vue","pixi"],
+      "demo_url":null,
+      "github_url":null,
+      "importance": 2
+    }
+  ]
+}
