@@ -1,7 +1,7 @@
 <template>
   <v-touch class="slider" v-on:swipeleft="calChange(1)" v-on:swiperight="calChange(-1)">
     <!-- <h2 class="slider-title">Skills & Tools</h2> -->
-    <div class="slider-wrap" :style="{transform: 'translateX(' + (-170*now) +'px)'}">
+    <div class="slider-wrap" :style="{transform: 'translate(' + (-170*now) +'px,-50%)'}">
       <div class="slider-items" v-for="(e,i) in items" :key="e.name" :class="[i===now?'slider-now':'']" :data-lang='e.name' @click='goChange(i)'>
         <div class="slider-items-wrap">
           <img :src="e.url" draggable="false">
@@ -46,9 +46,12 @@
     background: linear-gradient(45deg, map-get($color,slider),map-get($color,accent2));
     text-align: center;
     position: relative;
-    @include flex(center,center,col);
+    /* @include flex(center,center,col); */
     height: 180px;
     overflow: hidden;
+    @include media(tablet){
+      height: 140px;
+    }
     // &-title{
     //   position: absolute;
     //   top: 10px;
@@ -62,7 +65,11 @@
       transition: transform .3s ;
       //50% 扣掉一格的(寬度+margin)/2
       left: calc(50% - 85px);
+      top:50%;
       z-index: 1;
+      @include media(tablet){
+        top:45%;
+      }
     }
     &-items{
       width: 130px;
@@ -85,6 +92,9 @@
         font-size: 12px;
         transform: translateX(-50%);
         display: none;
+        @include media(tablet){
+          top: -10px;
+        }
       }
       &:hover::before{
         display: block;
@@ -140,6 +150,9 @@
       position: absolute;
       bottom: 4px;
       z-index: 1;
+      @include media(tablet){
+        bottom: 0;
+      }
       &-round{
         padding: 5px;
         display: inline-block;
@@ -155,7 +168,10 @@
     }
     &-now{
       transform: scale(1.3);
-      background-color: rgba(map-get($map: $color, $key: slider_now),.7);  
+      background-color: rgba(map-get($map: $color, $key: slider_now),.7);
+      @include media(tablet){
+        transform:scale(1.15);
+      }  
     }
     &-btn-now{
       >span{

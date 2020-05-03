@@ -32,13 +32,6 @@
             也曾參加人才培訓計畫，加強對於網頁的理解及技術上的應用，再透過各種管道來學習現今主要的趨勢，時時更新自己的能力。
           </p>
         </div>
-        <!-- 我是曹上傑，西元 1996 年生，應屆畢業於 國立台灣大學 經濟學系。
-        個性積極開朗，好奇且樂於學習，時時更新自己的能力。
-        大三暑假進入企業以正職網頁美術設計工作 1 年半， 累積 B2B
-        工作經驗、作品以及專業設計流程、技術。
-        有別於一般設計人才，結合前端開發經驗，以及在學時金融分析訓練， 語言能力
-        多益 890 分，我是個 跨領域且善於溝通的人才。
-        出社會後嘗試各個領域挑戰自己，累積實力 -->
       </div>
     </div>
   </div>
@@ -51,10 +44,12 @@
   background-color: map-get($color, tertiary);
   border-radius: 30px;
   box-shadow: 5px 5px 10px rgba(#000, 0.1);
+  @include media(tablet){
+    margin-bottom: 0px;
+  }
   @include media(mobile) {
     width: 100%;
     height: calc(100vh - 80px);
-    margin-bottom: 0;
     overflow-y: scroll;
   }
   &-title {
@@ -62,12 +57,17 @@
     padding: 20px 0;
     font-family: "Courgette", "Noto Sans", "Noto Sans TC", sans-serif;
     font-size: 48px;
+    @include media(tablet){
+      padding: 10px 0;
+    }
   }
   &-info {
     margin: 20px 0;
     justify-content: center;
-    @include media(mobile) {
+    @include media(tablet){
       margin: 0;
+    }
+    @include media(mobile) {
       padding: 15px;
     }
   }
@@ -195,6 +195,7 @@ export default {
           url: "https://img.icons8.com/color/256/000000/javascript.png"
         },
         { name: "jQuery", url: "https://i.imgur.com/lgAWIAL.png" },
+        { name: 'React' , url:"https://i.imgur.com/a7uq3iC.png"},
         { name: "Vue", url: "https://i.imgur.com/7kQRg6J.png" },
         { name: "Git", url: "https://i.imgur.com/l5YHzCx.png" },
         { name: "GitHub", url: "https://i.imgur.com/2fb2xJB.png" },
